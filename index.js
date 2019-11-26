@@ -1,0 +1,174 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+require("@babel/polyfill");
+require("isomorphic-fetch");
+var koa_shopify_auth_1 = __importStar(require("@shopify/koa-shopify-auth"));
+var koa_shopify_graphql_proxy_1 = __importStar(require("@shopify/koa-shopify-graphql-proxy"));
+var koa_1 = __importDefault(require("koa"));
+var koa_router_1 = __importDefault(require("koa-router"));
+var koa_session_1 = __importDefault(require("koa-session"));
+var serve = require("koa-static");
+var app_1 = __importDefault(require("firebase/app"));
+require("firebase/firestore");
+require("firebase/functions");
+var firebase = app_1.default.initializeApp('');
+// import * as handlers from "./handlers/index";
+// conditionally require yenv if process.env not populated
+var env, yenv;
+if (typeof process !== "undefined" &&
+    typeof process.env !== "undefined") {
+    yenv = require('yenv');
+    env = yenv(); // defaults to .env.yaml
+}
+var port = 8081;
+var SHOPIFY_API_KEY = env.SHOPIFY_API_KEY, SHOPIFY_API_SECRET = env.SHOPIFY_API_SECRET, SCOPES = env.SCOPES;
+var koa = new koa_1.default();
+var router = new koa_router_1.default();
+koa.use(koa_session_1.default(koa));
+koa.keys = [SHOPIFY_API_SECRET];
+// serve anything in public folder
+koa.use(serve("public"));
+// authenticate shopify credentials. Then capture an access token and redirect to root
+// root is whatever is at the root of path ./public/
+koa.use(koa_shopify_auth_1.default({
+    apiKey: SHOPIFY_API_KEY,
+    secret: SHOPIFY_API_SECRET,
+    scopes: [SCOPES],
+    afterAuth: function (ctx) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a, shop, accessToken;
+            return __generator(this, function (_b) {
+                _a = ctx.session, shop = _a.shop, accessToken = _a.accessToken;
+                ctx.cookies.set("shopOrigin", shop, { httpOnly: false });
+                ctx.redirect("/");
+                return [2 /*return*/];
+            });
+        });
+    }
+}));
+// use graphQL middleware
+koa.use(koa_shopify_graphql_proxy_1.default({ version: koa_shopify_graphql_proxy_1.ApiVersion.October19 }));
+// check if the script tag is posted. Add if not there
+// this is a middleware
+// todo work in progress
+var getAllScriptTags = function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
+    var response, responseBody, e_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 3, , 4]);
+                return [4 /*yield*/, fetch('admin/api/2019-10/script_tags.json', {
+                        method: "post"
+                    })];
+            case 1:
+                response = _a.sent();
+                return [4 /*yield*/, response.json()];
+            case 2:
+                responseBody = _a.sent();
+                console.log(responseBody, "=====responseBody get all script tags=====");
+                ctx.res.statusCode = 200;
+                ctx.respond("ctx respond triggered");
+                return [3 /*break*/, 4];
+            case 3:
+                e_1 = _a.sent();
+                console.log(e_1, "=====e=====");
+                ctx.respond("error");
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
+        }
+    });
+}); };
+// send an access token to any request
+router.post("/unauth", function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
+    var response, accessToken, e_2;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                // see what access tokens are available
+                console.log(ctx.session.accessToken, "=====ctx.session.accessToken (general)=====");
+                ctx.body = ctx.session.accessToken;
+                return [2 /*return*/];
+            case 1:
+                _a.trys.push([1, 4, , 5]);
+                return [4 /*yield*/, fetch("https://seandezoysa.myshopify.com/admin/api/2019-10/storefront_access_tokens.json", {
+                        method: "post"
+                    })];
+            case 2:
+                response = _a.sent();
+                return [4 /*yield*/, response.json()];
+            case 3:
+                accessToken = _a.sent();
+                console.log(accessToken, "=====accessToken=====");
+                ctx.res.statusCode = 200;
+                ctx.body = accessToken;
+                return [3 /*break*/, 5];
+            case 4:
+                e_2 = _a.sent();
+                console.log(e_2, "=====error=====");
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); });
+// run all remaining requests through verification middleware
+router.get("*", koa_shopify_auth_1.verifyRequest(), function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        console.log(ctx.session.accessToken, "=====accessToken inside router.get(*...=====");
+        ctx.respond = false;
+        ctx.res.statusCode = 200;
+        return [2 /*return*/];
+    });
+}); });
+koa.use(router.allowedMethods());
+koa.use(router.routes());
+koa.listen(port, function () { return console.log("Koa server listening on port " + port); });
+exports.helloWorld = function (req, res) {
+    res.send('Hello, World');
+};
+//# sourceMappingURL=index.js.map

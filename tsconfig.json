@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "types": [],
+    "target": "es5",
+    "sourceMap": true,
+    "noEmitOnError": false,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "noUnusedLocals": false,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "skipLibCheck": false,
+    "strict": false,
+    "noEmit": false,
+    "resolveJsonModule": true,
+    "isolatedModules": false
+  },
+  "exclude": [
+    "node_modules"
+    , ".idea"
+    , "public"
+  ],
+  "lib": [
+    "dom",
+    "es2015",
+    "es2017"
+  ],
+  "include": ["**/*.ts"]
+}

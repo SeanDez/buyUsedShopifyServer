@@ -1,0 +1,1 @@
+console.log('======== testing script file has been loaded ========');
