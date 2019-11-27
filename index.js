@@ -48,50 +48,35 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("@babel/polyfill");
 require("isomorphic-fetch");
-var koa_shopify_auth_1 = __importStar(require("@shopify/koa-shopify-auth"));
+// import createShopifyAuth, { verifyRequest } from "@shopify/koa-shopify-auth";
 var koa_shopify_graphql_proxy_1 = __importStar(require("@shopify/koa-shopify-graphql-proxy"));
 var koa_1 = __importDefault(require("koa"));
 var koa_router_1 = __importDefault(require("koa-router"));
 var koa_session_1 = __importDefault(require("koa-session"));
 var serve = require("koa-static");
-var app_1 = __importDefault(require("firebase/app"));
-require("firebase/firestore");
-require("firebase/functions");
-var firebase = app_1.default.initializeApp('');
+console.log("====test======");
 // import * as handlers from "./handlers/index";
-// conditionally require yenv if process.env not populated
-var env, yenv;
-if (typeof process !== "undefined" &&
-    typeof process.env !== "undefined") {
-    yenv = require('yenv');
-    env = yenv(); // defaults to .env.yaml
-}
-var port = 8081;
-var SHOPIFY_API_KEY = env.SHOPIFY_API_KEY, SHOPIFY_API_SECRET = env.SHOPIFY_API_SECRET, SCOPES = env.SCOPES;
+// const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, SCOPES} = env;
 var koa = new koa_1.default();
 var router = new koa_router_1.default();
 koa.use(koa_session_1.default(koa));
-koa.keys = [SHOPIFY_API_SECRET];
+// koa.keys = [SHOPIFY_API_SECRET];
 // serve anything in public folder
 koa.use(serve("public"));
 // authenticate shopify credentials. Then capture an access token and redirect to root
 // root is whatever is at the root of path ./public/
-koa.use(koa_shopify_auth_1.default({
-    apiKey: SHOPIFY_API_KEY,
-    secret: SHOPIFY_API_SECRET,
-    scopes: [SCOPES],
-    afterAuth: function (ctx) {
-        return __awaiter(this, void 0, void 0, function () {
-            var _a, shop, accessToken;
-            return __generator(this, function (_b) {
-                _a = ctx.session, shop = _a.shop, accessToken = _a.accessToken;
-                ctx.cookies.set("shopOrigin", shop, { httpOnly: false });
-                ctx.redirect("/");
-                return [2 /*return*/];
-            });
-        });
-    }
-}));
+// koa.use(createShopifyAuth({
+//   apiKey : SHOPIFY_API_KEY
+//   , secret : SHOPIFY_API_SECRET
+//   , scopes : [SCOPES]
+//   , async afterAuth(ctx) {
+//     const {shop, accessToken} = ctx.session;
+//     ctx.cookies.set("shopOrigin", shop, { httpOnly : false});
+//
+//
+//     ctx.redirect("/");
+//   }
+// }));
 // use graphQL middleware
 koa.use(koa_shopify_graphql_proxy_1.default({ version: koa_shopify_graphql_proxy_1.ApiVersion.October19 }));
 // check if the script tag is posted. Add if not there
@@ -157,18 +142,17 @@ router.post("/unauth", function (ctx) { return __awaiter(void 0, void 0, void 0,
     });
 }); });
 // run all remaining requests through verification middleware
-router.get("*", koa_shopify_auth_1.verifyRequest(), function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        console.log(ctx.session.accessToken, "=====accessToken inside router.get(*...=====");
-        ctx.respond = false;
-        ctx.res.statusCode = 200;
-        return [2 /*return*/];
-    });
-}); });
+// router.get("*", verifyRequest(), async ctx => {
+// console.log(ctx.session.accessToken, `=====accessToken inside router.get(*...=====`);
+// ctx.respond = false;
+// ctx.res.statusCode = 200;
+// });
 koa.use(router.allowedMethods());
 koa.use(router.routes());
+var port = 8081;
 koa.listen(port, function () { return console.log("Koa server listening on port " + port); });
 exports.helloWorld = function (req, res) {
     res.send('Hello, World');
 };
+////// Rewrite //////
 //# sourceMappingURL=index.js.map

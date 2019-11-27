@@ -1,41 +1,27 @@
 import "@babel/polyfill";
 import "isomorphic-fetch";
-import createShopifyAuth, { verifyRequest } from "@shopify/koa-shopify-auth";
+// import createShopifyAuth, { verifyRequest } from "@shopify/koa-shopify-auth";
 import graphQLProxy, { ApiVersion } from "@shopify/koa-shopify-graphql-proxy";
 import Koa from "koa";
 import Router from "koa-router";
 import session from "koa-session";
 const serve = require("koa-static");
 
-import firebaseLib from "firebase/app";
-import "firebase/firestore";
-import "firebase/functions";
+console.log(`====test======`);
 
 
 
-const firebase = firebaseLib.initializeApp('');
 
 
 // import * as handlers from "./handlers/index";
 
-// conditionally require yenv if process.env not populated
-let env, yenv;
-if (typeof process !== "undefined" &&
- typeof process.env !== "undefined") {
-  yenv = require('yenv');
-  env = yenv(); // defaults to .env.yaml
-}
 
-
-const port = 8081;
-
-
-const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, SCOPES} = env;
+// const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, SCOPES} = env;
 
 const koa = new Koa();
 const router = new Router();
 koa.use(session(koa));
-koa.keys = [SHOPIFY_API_SECRET];
+// koa.keys = [SHOPIFY_API_SECRET];
 
 
 // serve anything in public folder
@@ -44,18 +30,18 @@ koa.use(serve("public"));
 
 // authenticate shopify credentials. Then capture an access token and redirect to root
 // root is whatever is at the root of path ./public/
-koa.use(createShopifyAuth({
-  apiKey : SHOPIFY_API_KEY
-  , secret : SHOPIFY_API_SECRET
-  , scopes : [SCOPES]
-  , async afterAuth(ctx) {
-    const {shop, accessToken} = ctx.session;
-    ctx.cookies.set("shopOrigin", shop, { httpOnly : false});
-    
-    
-    ctx.redirect("/");
-  }
-}));
+// koa.use(createShopifyAuth({
+//   apiKey : SHOPIFY_API_KEY
+//   , secret : SHOPIFY_API_SECRET
+//   , scopes : [SCOPES]
+//   , async afterAuth(ctx) {
+//     const {shop, accessToken} = ctx.session;
+//     ctx.cookies.set("shopOrigin", shop, { httpOnly : false});
+//
+//
+//     ctx.redirect("/");
+//   }
+// }));
 
 // use graphQL middleware
 koa.use(graphQLProxy({version : ApiVersion.October19}));
@@ -106,17 +92,19 @@ router.post("/unauth", async ctx => {
 
 
 // run all remaining requests through verification middleware
-router.get("*", verifyRequest(), async ctx => {
+// router.get("*", verifyRequest(), async ctx => {
   
-  console.log(ctx.session.accessToken, `=====accessToken inside router.get(*...=====`);
+  // console.log(ctx.session.accessToken, `=====accessToken inside router.get(*...=====`);
   
-  ctx.respond = false;
-  ctx.res.statusCode = 200;
-});
+  // ctx.respond = false;
+  // ctx.res.statusCode = 200;
+// });
 
 
 koa.use(router.allowedMethods());
 koa.use(router.routes());
+
+const port = 8081;
 koa.listen(port, () => console.log(`Koa server listening on port ${port}`));
 
 
@@ -125,4 +113,14 @@ koa.listen(port, () => console.log(`Koa server listening on port ${port}`));
 export const helloWorld = (req, res) => {
   res.send('Hello, World');
 };
+
+
+
+////// Rewrite //////
+
+
+
+
+
+
 
