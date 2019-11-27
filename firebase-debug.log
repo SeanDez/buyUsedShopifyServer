@@ -1022,3 +1022,255 @@ Dev App Server is now running.
 [info] >  (node:19945) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 [debug] [2019-11-27T15:57:21.202Z] [worker-~diagnostic~-5fa1236e-b830-452b-9732-0c8a5ec91ea8]: exited
 [debug] [2019-11-27T15:57:21.202Z] [worker-~diagnostic~-5fa1236e-b830-452b-9732-0c8a5ec91ea8]: FINISHED
+[debug] [2019-11-27T21:38:55.628Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/package.json changed, reloading triggers
+[debug] [2019-11-27T21:38:56.404Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/package-lock.json changed, reloading triggers
+[debug] [2019-11-27T21:38:57.415Z] [worker-~diagnostic~-6d8f5cc9-4af5-4eda-84e6-d83d30d2eca6]: Assigning socketPath: /tmp/fire_emu_13742.sock
+[debug] [2019-11-27T21:38:57.415Z] [worker-~diagnostic~-6d8f5cc9-4af5-4eda-84e6-d83d30d2eca6]: BUSY
+[debug] [2019-11-27T21:39:11.927Z] [runtime-status] [13742] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:39:11.931Z] [runtime-status] [13742] Disabled runtime features: undefined
+[debug] [2019-11-27T21:39:11.961Z] [runtime-status] [13742] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:39:11.975Z] [runtime-status] [13742] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:39:23.242Z] [runtime-status] [13742] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:39:23.242Z] [runtime-status] [13742] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:39:24.804Z] [runtime-status] [13742] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:39:24.805Z] [runtime-status] [13742] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:39:24.806Z] [runtime-status] [13742] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:39:24.806Z] [runtime-status] [13742] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:39:25.877Z] [runtime-status] [13742] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:13742) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:13742) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:13742) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:39:35.971Z] [worker-~diagnostic~-6d8f5cc9-4af5-4eda-84e6-d83d30d2eca6]: exited
+[debug] [2019-11-27T21:39:35.972Z] [worker-~diagnostic~-6d8f5cc9-4af5-4eda-84e6-d83d30d2eca6]: FINISHED
+[debug] [2019-11-27T21:41:02.251Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/package.json changed, reloading triggers
+[debug] [2019-11-27T21:41:02.407Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/package-lock.json changed, reloading triggers
+[debug] [2019-11-27T21:41:03.413Z] [worker-~diagnostic~-604a2df0-94b4-40d9-a6ab-06d587cf1533]: Assigning socketPath: /tmp/fire_emu_14315.sock
+[debug] [2019-11-27T21:41:03.414Z] [worker-~diagnostic~-604a2df0-94b4-40d9-a6ab-06d587cf1533]: BUSY
+[debug] [2019-11-27T21:41:03.711Z] [runtime-status] [14315] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:41:03.713Z] [runtime-status] [14315] Disabled runtime features: undefined
+[debug] [2019-11-27T21:41:03.717Z] [runtime-status] [14315] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:41:03.718Z] [runtime-status] [14315] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:41:03.907Z] [runtime-status] [14315] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:41:03.908Z] [runtime-status] [14315] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:41:03.964Z] [runtime-status] [14315] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:41:03.965Z] [runtime-status] [14315] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:41:03.967Z] [runtime-status] [14315] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:41:03.967Z] [runtime-status] [14315] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:41:04.007Z] [runtime-status] [14315] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:14315) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:14315) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:14315) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:41:04.536Z] [worker-~diagnostic~-604a2df0-94b4-40d9-a6ab-06d587cf1533]: exited
+[debug] [2019-11-27T21:41:04.537Z] [worker-~diagnostic~-604a2df0-94b4-40d9-a6ab-06d587cf1533]: FINISHED
+[debug] [2019-11-27T21:41:04.700Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T21:41:04.700Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T21:41:05.706Z] [worker-~diagnostic~-63e2f89a-8d22-451b-afbb-5a4143c2c5bd]: Assigning socketPath: /tmp/fire_emu_14334.sock
+[debug] [2019-11-27T21:41:05.706Z] [worker-~diagnostic~-63e2f89a-8d22-451b-afbb-5a4143c2c5bd]: BUSY
+[debug] [2019-11-27T21:41:07.278Z] [runtime-status] [14334] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:41:07.280Z] [runtime-status] [14334] Disabled runtime features: undefined
+[debug] [2019-11-27T21:41:07.284Z] [runtime-status] [14334] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:41:07.285Z] [runtime-status] [14334] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:41:07.518Z] [runtime-status] [14334] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:41:07.519Z] [runtime-status] [14334] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:41:07.562Z] [runtime-status] [14334] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:41:07.563Z] [runtime-status] [14334] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:41:07.564Z] [runtime-status] [14334] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:41:07.565Z] [runtime-status] [14334] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:41:07.592Z] [runtime-status] [14334] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:14334) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:14334) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:14334) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:41:08.511Z] [worker-~diagnostic~-63e2f89a-8d22-451b-afbb-5a4143c2c5bd]: exited
+[debug] [2019-11-27T21:41:08.511Z] [worker-~diagnostic~-63e2f89a-8d22-451b-afbb-5a4143c2c5bd]: FINISHED
+[debug] [2019-11-27T21:45:01.826Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:45:02.386Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T21:45:02.387Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T21:45:03.396Z] [worker-~diagnostic~-338d33d6-b6ad-4b74-a939-463502650b1a]: Assigning socketPath: /tmp/fire_emu_15098.sock
+[debug] [2019-11-27T21:45:03.396Z] [worker-~diagnostic~-338d33d6-b6ad-4b74-a939-463502650b1a]: BUSY
+[debug] [2019-11-27T21:45:03.827Z] [runtime-status] [15098] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:45:03.829Z] [runtime-status] [15098] Disabled runtime features: undefined
+[debug] [2019-11-27T21:45:03.831Z] [runtime-status] [15098] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:45:03.834Z] [runtime-status] [15098] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:45:04.036Z] [runtime-status] [15098] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:45:04.036Z] [runtime-status] [15098] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:45:04.072Z] [runtime-status] [15098] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:45:04.073Z] [runtime-status] [15098] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:45:04.074Z] [runtime-status] [15098] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:45:04.074Z] [runtime-status] [15098] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:45:04.097Z] [runtime-status] [15098] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:15098) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:15098) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:15098) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:45:04.287Z] [worker-~diagnostic~-338d33d6-b6ad-4b74-a939-463502650b1a]: exited
+[debug] [2019-11-27T21:45:04.287Z] [worker-~diagnostic~-338d33d6-b6ad-4b74-a939-463502650b1a]: FINISHED
+[debug] [2019-11-27T21:45:09.200Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:45:09.733Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T21:45:09.734Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T21:45:10.743Z] [worker-~diagnostic~-6554e4e8-bf19-4e7c-9af5-c7ccae8ec2ec]: Assigning socketPath: /tmp/fire_emu_15153.sock
+[debug] [2019-11-27T21:45:10.743Z] [worker-~diagnostic~-6554e4e8-bf19-4e7c-9af5-c7ccae8ec2ec]: BUSY
+[debug] [2019-11-27T21:45:11.356Z] [runtime-status] [15153] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:45:11.359Z] [runtime-status] [15153] Disabled runtime features: undefined
+[debug] [2019-11-27T21:45:11.361Z] [runtime-status] [15153] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:45:11.363Z] [runtime-status] [15153] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:45:11.528Z] [runtime-status] [15153] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:45:11.529Z] [runtime-status] [15153] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:45:11.566Z] [runtime-status] [15153] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:45:11.567Z] [runtime-status] [15153] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:45:11.567Z] [runtime-status] [15153] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:45:11.568Z] [runtime-status] [15153] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:45:11.593Z] [runtime-status] [15153] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:15153) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:15153) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:15153) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:45:11.785Z] [worker-~diagnostic~-6554e4e8-bf19-4e7c-9af5-c7ccae8ec2ec]: exited
+[debug] [2019-11-27T21:45:11.786Z] [worker-~diagnostic~-6554e4e8-bf19-4e7c-9af5-c7ccae8ec2ec]: FINISHED
+[debug] [2019-11-27T21:47:58.660Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:47:58.747Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:47:59.213Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T21:47:59.213Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T21:48:00.223Z] [worker-~diagnostic~-0d25e982-de5e-40e0-9db1-86819a96ec1e]: Assigning socketPath: /tmp/fire_emu_15633.sock
+[debug] [2019-11-27T21:48:00.224Z] [worker-~diagnostic~-0d25e982-de5e-40e0-9db1-86819a96ec1e]: BUSY
+[debug] [2019-11-27T21:48:00.556Z] [runtime-status] [15633] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:48:00.559Z] [runtime-status] [15633] Disabled runtime features: undefined
+[debug] [2019-11-27T21:48:00.563Z] [runtime-status] [15633] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:48:00.564Z] [runtime-status] [15633] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:00.745Z] [runtime-status] [15633] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:48:00.746Z] [runtime-status] [15633] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:48:00.782Z] [runtime-status] [15633] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:48:00.783Z] [runtime-status] [15633] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:00.784Z] [runtime-status] [15633] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:48:00.784Z] [runtime-status] [15633] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:00.808Z] [runtime-status] [15633] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:15633) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:15633) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:15633) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:48:01.017Z] [worker-~diagnostic~-0d25e982-de5e-40e0-9db1-86819a96ec1e]: exited
+[debug] [2019-11-27T21:48:01.017Z] [worker-~diagnostic~-0d25e982-de5e-40e0-9db1-86819a96ec1e]: FINISHED
+[debug] [2019-11-27T21:48:03.562Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:48:03.669Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:48:03.964Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T21:48:03.964Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T21:48:04.972Z] [worker-~diagnostic~-f05f28d8-aba5-408b-a33d-8d99d3bc8c02]: Assigning socketPath: /tmp/fire_emu_15651.sock
+[debug] [2019-11-27T21:48:04.972Z] [worker-~diagnostic~-f05f28d8-aba5-408b-a33d-8d99d3bc8c02]: BUSY
+[debug] [2019-11-27T21:48:05.304Z] [runtime-status] [15651] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:48:05.308Z] [runtime-status] [15651] Disabled runtime features: undefined
+[debug] [2019-11-27T21:48:05.312Z] [runtime-status] [15651] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:48:05.318Z] [runtime-status] [15651] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:05.510Z] [runtime-status] [15651] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:48:05.510Z] [runtime-status] [15651] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:48:05.549Z] [runtime-status] [15651] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:48:05.550Z] [runtime-status] [15651] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:05.551Z] [runtime-status] [15651] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:48:05.551Z] [runtime-status] [15651] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:05.576Z] [runtime-status] [15651] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:15651) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:15651) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:15651) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:48:05.764Z] [worker-~diagnostic~-f05f28d8-aba5-408b-a33d-8d99d3bc8c02]: exited
+[debug] [2019-11-27T21:48:05.765Z] [worker-~diagnostic~-f05f28d8-aba5-408b-a33d-8d99d3bc8c02]: FINISHED
+[debug] [2019-11-27T21:48:45.653Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:48:45.769Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:48:46.032Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T21:48:46.033Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T21:48:47.043Z] [worker-~diagnostic~-44eb921e-239e-4ab2-8f5f-e68d1d4781ec]: Assigning socketPath: /tmp/fire_emu_15802.sock
+[debug] [2019-11-27T21:48:47.043Z] [worker-~diagnostic~-44eb921e-239e-4ab2-8f5f-e68d1d4781ec]: BUSY
+[debug] [2019-11-27T21:48:47.361Z] [runtime-status] [15802] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:48:47.364Z] [runtime-status] [15802] Disabled runtime features: undefined
+[debug] [2019-11-27T21:48:47.366Z] [runtime-status] [15802] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:48:47.368Z] [runtime-status] [15802] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:47.541Z] [runtime-status] [15802] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:48:47.541Z] [runtime-status] [15802] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:48:47.580Z] [runtime-status] [15802] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:48:47.581Z] [runtime-status] [15802] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:47.581Z] [runtime-status] [15802] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:48:47.582Z] [runtime-status] [15802] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:48:47.607Z] [runtime-status] [15802] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:15802) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:15802) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:15802) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:48:47.802Z] [worker-~diagnostic~-44eb921e-239e-4ab2-8f5f-e68d1d4781ec]: exited
+[debug] [2019-11-27T21:48:47.803Z] [worker-~diagnostic~-44eb921e-239e-4ab2-8f5f-e68d1d4781ec]: FINISHED
+[debug] [2019-11-27T21:58:42.221Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:58:42.313Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T21:58:42.806Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T21:58:42.806Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T21:58:43.816Z] [worker-~diagnostic~-ae9c1d2e-d852-4a1c-9491-609348eee09c]: Assigning socketPath: /tmp/fire_emu_17366.sock
+[debug] [2019-11-27T21:58:43.817Z] [worker-~diagnostic~-ae9c1d2e-d852-4a1c-9491-609348eee09c]: BUSY
+[debug] [2019-11-27T21:58:44.127Z] [runtime-status] [17366] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:58:44.129Z] [runtime-status] [17366] Disabled runtime features: undefined
+[debug] [2019-11-27T21:58:44.131Z] [runtime-status] [17366] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:58:44.134Z] [runtime-status] [17366] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:58:44.305Z] [runtime-status] [17366] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:58:44.305Z] [runtime-status] [17366] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:58:44.341Z] [runtime-status] [17366] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:58:44.342Z] [runtime-status] [17366] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:58:44.342Z] [runtime-status] [17366] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:58:44.343Z] [runtime-status] [17366] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:58:44.366Z] [runtime-status] [17366] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:17366) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:17366) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:17366) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:58:44.561Z] [worker-~diagnostic~-ae9c1d2e-d852-4a1c-9491-609348eee09c]: exited
+[debug] [2019-11-27T21:58:44.561Z] [worker-~diagnostic~-ae9c1d2e-d852-4a1c-9491-609348eee09c]: FINISHED
+[debug] [2019-11-27T21:59:40.752Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/tslint.json changed, reloading triggers
+[debug] [2019-11-27T21:59:40.812Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/tslint.json changed, reloading triggers
+[debug] [2019-11-27T21:59:41.821Z] [worker-~diagnostic~-0705fcf1-04a5-4f69-b1bb-ae0e7e3400fe]: Assigning socketPath: /tmp/fire_emu_17484.sock
+[debug] [2019-11-27T21:59:41.821Z] [worker-~diagnostic~-0705fcf1-04a5-4f69-b1bb-ae0e7e3400fe]: BUSY
+[debug] [2019-11-27T21:59:42.136Z] [runtime-status] [17484] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T21:59:42.139Z] [runtime-status] [17484] Disabled runtime features: undefined
+[debug] [2019-11-27T21:59:42.140Z] [runtime-status] [17484] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:59:42.143Z] [runtime-status] [17484] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:59:42.302Z] [runtime-status] [17484] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T21:59:42.303Z] [runtime-status] [17484] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T21:59:42.338Z] [runtime-status] [17484] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T21:59:42.339Z] [runtime-status] [17484] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:59:42.340Z] [runtime-status] [17484] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T21:59:42.341Z] [runtime-status] [17484] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T21:59:42.364Z] [runtime-status] [17484] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:17484) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:17484) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:17484) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T21:59:42.555Z] [worker-~diagnostic~-0705fcf1-04a5-4f69-b1bb-ae0e7e3400fe]: exited
+[debug] [2019-11-27T21:59:42.555Z] [worker-~diagnostic~-0705fcf1-04a5-4f69-b1bb-ae0e7e3400fe]: FINISHED
+[debug] [2019-11-27T22:01:05.979Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T22:01:06.058Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/index.ts changed, reloading triggers
+[debug] [2019-11-27T22:01:06.488Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T22:01:06.489Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T22:01:07.498Z] [worker-~diagnostic~-02321982-9379-42dc-8018-7f7e4e210596]: Assigning socketPath: /tmp/fire_emu_17730.sock
+[debug] [2019-11-27T22:01:07.498Z] [worker-~diagnostic~-02321982-9379-42dc-8018-7f7e4e210596]: BUSY
+[debug] [2019-11-27T22:01:07.845Z] [runtime-status] [17730] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T22:01:07.847Z] [runtime-status] [17730] Disabled runtime features: undefined
+[debug] [2019-11-27T22:01:07.849Z] [runtime-status] [17730] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T22:01:07.852Z] [runtime-status] [17730] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T22:01:08.037Z] [runtime-status] [17730] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T22:01:08.038Z] [runtime-status] [17730] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T22:01:08.074Z] [runtime-status] [17730] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T22:01:08.075Z] [runtime-status] [17730] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T22:01:08.076Z] [runtime-status] [17730] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T22:01:08.076Z] [runtime-status] [17730] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T22:01:08.100Z] [runtime-status] [17730] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:17730) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:17730) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:17730) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T22:01:08.293Z] [worker-~diagnostic~-02321982-9379-42dc-8018-7f7e4e210596]: exited
+[debug] [2019-11-27T22:01:08.293Z] [worker-~diagnostic~-02321982-9379-42dc-8018-7f7e4e210596]: FINISHED
+[debug] [2019-11-27T22:01:23.381Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js.map changed, reloading triggers
+[debug] [2019-11-27T22:01:23.381Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/index.js changed, reloading triggers
+[debug] [2019-11-27T22:01:24.386Z] [worker-~diagnostic~-4d3544ed-7979-4817-9476-685a29a7ef1d]: Assigning socketPath: /tmp/fire_emu_17881.sock
+[debug] [2019-11-27T22:01:24.386Z] [worker-~diagnostic~-4d3544ed-7979-4817-9476-685a29a7ef1d]: BUSY
+[debug] [2019-11-27T22:01:24.735Z] [runtime-status] [17881] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2019-11-27T22:01:24.738Z] [runtime-status] [17881] Disabled runtime features: undefined
+[debug] [2019-11-27T22:01:24.741Z] [runtime-status] [17881] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T22:01:24.742Z] [runtime-status] [17881] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T22:01:24.909Z] [runtime-status] [17881] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-11-27T22:01:24.910Z] [runtime-status] [17881] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-11-27T22:01:24.973Z] [runtime-status] [17881] Checked functions.config() {"config":{}}
+[debug] [2019-11-27T22:01:24.974Z] [runtime-status] [17881] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T22:01:24.975Z] [runtime-status] [17881] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-11-27T22:01:24.975Z] [runtime-status] [17881] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-11-27T22:01:25.000Z] [runtime-status] [17881] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] >  (node:17881) UnhandledPromiseRejectionWarning: AppBridgeError: APP::APP_ERROR::WINDOW_UNDEFINED: State is only available on the client side.
+[info] >  (node:17881) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[info] >  (node:17881) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-11-27T22:01:25.195Z] [worker-~diagnostic~-4d3544ed-7979-4817-9476-685a29a7ef1d]: exited
+[debug] [2019-11-27T22:01:25.195Z] [worker-~diagnostic~-4d3544ed-7979-4817-9476-685a29a7ef1d]: FINISHED

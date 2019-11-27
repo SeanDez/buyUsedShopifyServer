@@ -45,9 +45,10 @@ const app = createApp({
  shopOrigin: "seandezoysa.myshopify.com",
 });
 
-app
+app // ERROR: ~/src/index.ts:48:1 - Promises must be handled appropriately
  .getState()
- .then((state: any) => {
- console.info('App State: %o', state)
+ .then(data => {
+ console.info(data, ` data`)
+
 });
 

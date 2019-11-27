@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 import "isomorphic-fetch";
+import functions from "firebase-functions";
 // import createShopifyAuth, { verifyRequest } from "@shopify/koa-shopify-auth";
 import graphQLProxy, { ApiVersion } from "@shopify/koa-shopify-graphql-proxy";
 import Koa from "koa";
@@ -10,6 +11,16 @@ const serve = require("koa-static");
 console.log(`====test======`);
 
 
+////// test function //////
+
+export const helloWorld = functions.https.onRequest((request, response) => {
+  response.send("simple string response");
+});
+
+// old code
+// export const helloWorld = (req, res) => {
+//   res.send('Hello, World');
+// };
 
 
 
@@ -110,9 +121,6 @@ koa.listen(port, () => console.log(`Koa server listening on port ${port}`));
 
 
 
-export const helloWorld = (req, res) => {
-  res.send('Hello, World');
-};
 
 
 
