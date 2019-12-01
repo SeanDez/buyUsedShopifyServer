@@ -1,51 +1,3 @@
-// // import "@babel/polyfill";
-// import "isomorphic-fetch";
-// import functions from 'firebase-functions';
-// import firebaseLib from "firebase/app";
-// import "firebase/firestore";
-// // import "firebase/functions";
-// import createApp from "@shopify/app-bridge";
-//
-//
-// const firebase = firebaseLib.initializeApp('');
-//
-//
-// // // Start writing Firebase Functions
-// // // https://firebase.google.com/docs/functions/typescript
-// //
-// // export const helloWorld = functions.https.onRequest((request, response) => {
-// //  response.send("Hello from Firebase!");
-// // });
-//
-//
-// // import * as handlers from "./handlers/index";
-//
-//
-// const port = 8081;
-//
-//
-// ////// Shop Origin //////
-// /*
-// *  To get the shop parameter, parse it out of the confirmation redirect URL during the installation confirmation step of the authorization process.
-//
-//  Store it for the duration of the user session. It’s best to use the session mechanism of your preferred framework. Otherwise, you can store the parameter in an HTTP-only cookie.
-// * */
-//
-// // todo setup a proper Shop Origin retrieval later
-// const app = createApp({
-//  apiKey: SHOPIFY_API_KEY,
-//  shopOrigin: "seandezoysa.myshopify.com",
-// });
-//
-// app // ERROR: ~/src/index.ts:48:1 - Promises must be handled appropriately
-//  .getState()
-//  .then(data => {
-//  console.info(data, ` data`)
-//
-// });
-//
-
-
 ////// Initial Setup //////
 import {redirect} from "@shopify/app-bridge/client/redirect";
 
@@ -79,7 +31,7 @@ express.get('/', (req: Request, res: Response): void => {
              Utility Functions
 * * * * * * * * * * * * * * * * * * * * */
 
-const buildRedirectUri = () => `${APP_URL}/shopify/callback`;
+const buildRedirectUri = () => `${APP_URL}/accessTokenRequestor`;
 const buildInstallUrl = (shop: string, state: string, redirectUri: string) => `https://${shop}/admin/oauth/authorize?client_id=${SHOPIFY_API_KEY}&scope=${SCOPES}&state=${state}&redirect_uri=${redirectUri}`;
 const buildAccessTokenRequestUrl = (shop: string) => `https://${shop}/admin/oauth/access_token`;
 const buildShopDataRequestUrl = (shop: string) => `https://${shop}/admin/shop.json`;
@@ -125,10 +77,10 @@ const fetchShopData = async (shop: string, accessToken: string) => {
 
 
 /* * * * * * * * * * * * * * * * * * * * *
-               Route Handlers
+              Route Handlers
 * * * * * * * * * * * * * * * * * * * * */
 
-express.get("/shopify", (req: Request, res: Response): Response|void => {
+express.get("/resourceServer/authorizationRequestor", (req: Request, res: Response): Response|void => {
  const shopParam = req.query.shop;
  if (!shopParam) return res.status(400).send("No shop param specified");
  
@@ -143,7 +95,7 @@ express.get("/shopify", (req: Request, res: Response): Response|void => {
 });
 
 
-express.get("/shopify/callback", async (req: Request, res: Response): Promise<Response|void> => {
+express.get("/shopify/accessTokenRequestor", async (req: Request, res: Response): Promise<Response|void> => {
  const {shop, code, state} = req.query;
  
  // parse the cookie string into an array. if state cookie is "", err
@@ -172,7 +124,6 @@ express.get("/shopify/callback", async (req: Request, res: Response): Promise<Re
   console.log(e, `=====error during fetchAccessToken=====`);
   res.status(400).send("error during fetchAccessToken")
  }
- 
 });
 
 
