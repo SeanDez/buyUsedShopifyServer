@@ -35,6 +35,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -42,12 +45,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 require("@babel/polyfill");
 require("isomorphic-fetch");
+var firebase_functions_1 = __importDefault(require("firebase-functions"));
 // import createShopifyAuth, { verifyRequest } from "@shopify/koa-shopify-auth";
 var koa_shopify_graphql_proxy_1 = __importStar(require("@shopify/koa-shopify-graphql-proxy"));
 var koa_1 = __importDefault(require("koa"));
@@ -55,6 +56,14 @@ var koa_router_1 = __importDefault(require("koa-router"));
 var koa_session_1 = __importDefault(require("koa-session"));
 var serve = require("koa-static");
 console.log("====test======");
+////// test function //////
+exports.helloWorld = firebase_functions_1.default.https.onRequest(function (request, response) {
+    response.send("simple string response");
+});
+// old code
+// export const helloWorld = (req, res) => {
+//   res.send('Hello, World');
+// };
 // import * as handlers from "./handlers/index";
 // const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, SCOPES} = env;
 var koa = new koa_1.default();
@@ -151,8 +160,5 @@ koa.use(router.allowedMethods());
 koa.use(router.routes());
 var port = 8081;
 koa.listen(port, function () { return console.log("Koa server listening on port " + port); });
-exports.helloWorld = function (req, res) {
-    res.send('Hello, World');
-};
 ////// Rewrite //////
 //# sourceMappingURL=index.js.map
