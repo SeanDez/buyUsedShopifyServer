@@ -12,7 +12,7 @@ const firebaseFunctions = require('firebase-functions');
 
 const express = Express();
 
-const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, SCOPES, APP_URL, GOOGLE_APPLICATION_CREDENTIALS } = process.env;
+const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, SCOPES, SERVER_APP_URL, GOOGLE_APPLICATION_CREDENTIALS } = process.env;
 
 
 ////// Initialize Firebase //////
@@ -31,7 +31,7 @@ express.get('/', (req: Request, res: Response): void => {
              Utility Functions
 * * * * * * * * * * * * * * * * * * * * */
 
-const buildRedirectUri = () => `${APP_URL}/accessTokenRequestor`;
+const buildRedirectUri = () => `${SERVER_APP_URL}/accessTokenRequestor`;
 const buildInstallUrl = (shop: string, state: string, redirectUri: string) => `https://${shop}/admin/oauth/authorize?client_id=${SHOPIFY_API_KEY}&scope=${SCOPES}&state=${state}&redirect_uri=${redirectUri}`;
 const buildAccessTokenRequestUrl = (shop: string) => `https://${shop}/admin/oauth/access_token`;
 const buildShopDataRequestUrl = (shop: string) => `https://${shop}/admin/shop.json`;
