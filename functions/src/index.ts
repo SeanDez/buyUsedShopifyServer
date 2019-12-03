@@ -4,15 +4,11 @@ import {redirect} from "@shopify/app-bridge/client/redirect";
 import Express, {Request, Response} from "express";
 import crypto from 'crypto';
 import cookie from 'cookie';
-import nonce from 'nonce';
 import queryString from 'querystring';
 import firebaseAdmin from "firebase-admin";
 // import firebaseFunctions from 'firebase-functions';
+const nonce = require('nonce')();
 const firebaseFunctions = require('firebase-functions');
-
-const express = Express();
-
-const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, SCOPES, SERVER_APP_URL, GOOGLE_APPLICATION_CREDENTIALS } = process.env;
 
 
 ////// Initialize Firebase //////
@@ -22,22 +18,32 @@ firebaseAdmin.initializeApp({
  databaseURL: 'https://buyusedshopify.firebaseio.com'
 });
 
+////// Basic Setup //////
+const express = Express();
 
-express.get('/', (req: Request, res: Response): void => {
- res.send('Express App Running')
-});
+const {shopify_api_key, shopify_api_secret, scopes, client_app_url, GOOGLE_APPLICATION_CREDENTIALS } = firebaseFunctions.config().env;
+
+
 
 /* * * * * * * * * * * * * * * * * * * * *
              Utility Functions
 * * * * * * * * * * * * * * * * * * * * */
 
-const buildRedirectUri = () => `${SERVER_APP_URL}/accessTokenRequestor`;
-const buildInstallUrl = (shop: string, state: string, redirectUri: string) => `https://${shop}/admin/oauth/authorize?client_id=${SHOPIFY_API_KEY}&scope=${SCOPES}&state=${state}&redirect_uri=${redirectUri}`;
+const getRedirectUri = () => {
+ console.log(client_app_url, `=====client_app_url=====`);
+ 
+ if (Boolean(client_app_url)) { return `${client_app_url}`; }
+ else {
+  console.log(`=====Redirect URI is undefined=====`);
+  throw Error("Redirect URI is undefined");
+ }
+};
+const buildInstallUrl = (shop: string, state: string, redirectUri: string) => `https://${shop}/admin/oauth/authorize?client_id=${shopify_api_key}&scope=${scopes}&state=${state}&redirect_uri=${client_app_url}`;
 const buildAccessTokenRequestUrl = (shop: string) => `https://${shop}/admin/oauth/access_token`;
 const buildShopDataRequestUrl = (shop: string) => `https://${shop}/admin/shop.json`;
 const generateEncryptedHash = (params: string) => {
- if (typeof  SHOPIFY_API_SECRET === "string") {
-  return crypto.createHmac("sha256", SHOPIFY_API_SECRET).update(params).digest('hex');
+ if (typeof  shopify_api_secret === "string") {
+  return crypto.createHmac("sha256", shopify_api_secret).update(params).digest('hex');
  } else {
   throw Error("during generateEncryptedHash() SHOPIFY_API_SECRET was not a string")
  }
@@ -80,22 +86,36 @@ const fetchShopData = async (shop: string, accessToken: string) => {
               Route Handlers
 * * * * * * * * * * * * * * * * * * * * */
 
-express.get("/resourceServer/authorizationRequestor", (req: Request, res: Response): Response|void => {
+
+express.get('/', (req: Request, res: Response): void => {
+ console.log(`=====get request on: /=====`);
+ res.send(`Express App Running - ${new Date()}`)
+});
+
+/** build the OAuth Server URL for granting an Auth Code. Redirect the browser there
+ */
+express.get("/authorizationRequestor", (req: Request, res: Response): Response|void => {
+ console.log(`=====/authorizationRequestor 2.4 begin=====`);
  const shopParam = req.query.shop;
  if (!shopParam) return res.status(400).send("No shop param specified");
  
  const state = nonce();
- const installShopUrl = buildInstallUrl(shopParam, state, buildRedirectUri());
- 
- // set state to a cookie keyed to "state"
+ const installShopUrl = buildInstallUrl(shopParam, state, getRedirectUri());
+ console.log(state, `=====state=====`);
+ console.log(installShopUrl, `=====installShopUrl=====`);
+ return;
+ // set generated nonce to a cookie keyed to "state". (Will be used for verification)
  res.cookie("state", state);
  
- // this is how you redirect to a iframed shopify app url
+ // redirect browser to the scopes page for front channel permission granting
+ console.log(res, `=====authorizationRequestor res / end=====`);
  res.redirect(installShopUrl);
 });
 
 
-express.get("/shopify/accessTokenRequestor", async (req: Request, res: Response): Promise<Response|void> => {
+express.get("/accessTokenRequestor", async (req: Request, res: Response): Promise<Response|void> => {
+ console.log(`=====/accessTokenRequestor=====`);
+ console.log(req, `=====accessTokenRequestor req / begin=====`);
  const {shop, code, state} = req.query;
  
  // parse the cookie string into an array. if state cookie is "", err
@@ -110,14 +130,18 @@ express.get("/shopify/accessTokenRequestor", async (req: Request, res: Response)
  if (hash !== hmac) return res.status(400).send("HMAC validation failed");
  
  try {
-  const shopCredentials = {
-   client_id : SHOPIFY_API_KEY
-   , client_secret : SHOPIFY_API_SECRET
+  const authorizedCredentials = {
+   client_id : shopify_api_key
+   , client_secret : shopify_api_secret
    , code
   };
-  const tokenResponse = await  fetchAccessToken(shop, shopCredentials);
+  const tokenResponse = await  fetchAccessToken(shop, authorizedCredentials);
   const {access_token} = tokenResponse;
+  
   const shopData = await fetchShopData(shop, access_token);
+  
+  // todo set this part up to load the hosted index.html file with my React app
+  console.log(res, `=====accessTokenRequestor res / end=====`);
   res.send(shopData.shop)
  }
  catch (e) {

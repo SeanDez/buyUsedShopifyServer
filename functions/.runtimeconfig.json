@@ -1,0 +1,10 @@
+{
+  "env": {
+    "google_application_credentials": "/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/buyusedshopify-firebase-adminsdk-serviceAccount.json",
+    "scopes": "read_products,write_products,unauthenticated_read_product_listings",
+    "test": "val",
+    "shopify_api_secret": "4d6d2677d11030ee8e9dbee32c08bd15",
+    "client_app_url": "https://us-central1-buyusedshopify.cloudfunctions.net/buyUsedServer",
+    "shopify_api_key": "d030d96fb2f5bf3eb016f380a099f799"
+  }
+}
