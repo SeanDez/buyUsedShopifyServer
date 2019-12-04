@@ -1,6 +1,5 @@
-////// Initial Setup //////
 import {redirect} from "@shopify/app-bridge/client/redirect";
-
+import * as keys from "../keys.json";
 import Express, {Request, Response} from "express";
 import crypto from 'crypto';
 import cookie from 'cookie';
@@ -21,7 +20,8 @@ firebaseAdmin.initializeApp({
 ////// Basic Setup //////
 const express = Express();
 
-const {shopify_api_key, shopify_api_secret, scopes, client_app_url, GOOGLE_APPLICATION_CREDENTIALS } = firebaseFunctions.config().env;
+const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, CLIENT_APP_URL, SCOPES} = keys;
+const {GOOGLE_APPLICATION_CREDENTIALS} = process.env;
 
 
 
@@ -30,20 +30,20 @@ const {shopify_api_key, shopify_api_secret, scopes, client_app_url, GOOGLE_APPLI
 * * * * * * * * * * * * * * * * * * * * */
 
 const getRedirectUri = () => {
- console.log(client_app_url, `=====client_app_url=====`);
+ console.log(CLIENT_APP_URL, `=====CLIENT_APP_URL=====`);
  
- if (Boolean(client_app_url)) { return `${client_app_url}`; }
+ if (Boolean(CLIENT_APP_URL)) { return `${CLIENT_APP_URL}`; }
  else {
   console.log(`=====Redirect URI is undefined=====`);
   throw Error("Redirect URI is undefined");
  }
 };
-const buildInstallUrl = (shop: string, state: string, redirectUri: string) => `https://${shop}/admin/oauth/authorize?client_id=${shopify_api_key}&scope=${scopes}&state=${state}&redirect_uri=${client_app_url}`;
+const buildInstallUrl = (shop: string, state: string, redirectUri: string) => `https://${shop}/admin/oauth/authorize?client_id=${SHOPIFY_API_KEY}&scope=${SCOPES}&state=${state}&redirect_uri=${CLIENT_APP_URL}`;
 const buildAccessTokenRequestUrl = (shop: string) => `https://${shop}/admin/oauth/access_token`;
 const buildShopDataRequestUrl = (shop: string) => `https://${shop}/admin/shop.json`;
 const generateEncryptedHash = (params: string) => {
- if (typeof  shopify_api_secret === "string") {
-  return crypto.createHmac("sha256", shopify_api_secret).update(params).digest('hex');
+ if (typeof  SHOPIFY_API_SECRET === "string") {
+  return crypto.createHmac("sha256", SHOPIFY_API_SECRET).update(params).digest('hex');
  } else {
   throw Error("during generateEncryptedHash() SHOPIFY_API_SECRET was not a string")
  }
@@ -131,8 +131,8 @@ express.get("/accessTokenRequestor", async (req: Request, res: Response): Promis
  
  try {
   const authorizedCredentials = {
-   client_id : shopify_api_key
-   , client_secret : shopify_api_secret
+   client_id : SHOPIFY_API_KEY
+   , client_secret : SHOPIFY_API_SECRET
    , code
   };
   const tokenResponse = await  fetchAccessToken(shop, authorizedCredentials);
