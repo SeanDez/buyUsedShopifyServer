@@ -1,5 +1,7 @@
 import {redirect} from "@shopify/app-bridge/client/redirect";
-import * as keys from "../keys.json";
+import keys from "./keys";
+import fetch from "isomorphic-fetch";
+import util from "util";
 import Express, {Request, Response} from "express";
 import crypto from 'crypto';
 import cookie from 'cookie';
@@ -21,8 +23,21 @@ firebaseAdmin.initializeApp({
 const express = Express();
 
 const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, CLIENT_APP_URL, SCOPES} = keys;
+// const {SHOPIFY_API_KEY, SHOPIFY_API_SECRET, CLIENT_APP_URL, SCOPES} = {SHOPIFY_API_SECRET: "", SHOPIFY_API_KEY: "", CLIENT_APP_URL : "", SCOPES: ""};
+
+
 const {GOOGLE_APPLICATION_CREDENTIALS} = process.env;
 
+
+/* * * * * * * * * * * * * * * * * * * * *
+                Interfaces
+* * * * * * * * * * * * * * * * * * * * */
+
+interface ShopifyAuthCodeCredentials {
+ client_id : string
+ , client_secret : string
+ , code : string
+}
 
 
 /* * * * * * * * * * * * * * * * * * * * *
@@ -49,7 +64,7 @@ const generateEncryptedHash = (params: string) => {
  }
 };
 
-const fetchAccessToken = async (shop: string, requestBody: object) => {
+const fetchAccessToken = async (shop: string, requestBody: ShopifyAuthCodeCredentials) => {
  try {
   const response = await fetch(buildAccessTokenRequestUrl(shop), {
    method : "post"
@@ -62,7 +77,7 @@ const fetchAccessToken = async (shop: string, requestBody: object) => {
   
   }
   catch (e) {
-   console.log(e, `=====error=====`);
+   console.log(util.inspect(e, {colors: true, depth : 10}), `=====error=====`);
   }
 };
 
@@ -77,7 +92,7 @@ const fetchShopData = async (shop: string, accessToken: string) => {
  return await response.json();
  }
  catch (e) {
-  console.log(e, `=====error=====`);
+  console.log(util.inspect(e, {colors: true, depth : 10}), `=====error=====`);
  }
 };
 
@@ -93,30 +108,29 @@ express.get('/', (req: Request, res: Response): void => {
 });
 
 /** build the OAuth Server URL for granting an Auth Code. Redirect the browser there
+ * also set a nonce for comparison later
  */
-express.get("/authorizationRequestor", (req: Request, res: Response): Response|void => {
- console.log(`=====/authorizationRequestor 2.4 begin=====`);
+express.get("/authorizationRequestor/", (req: Request, res: Response): Response|void => {
+ console.log(`=====/authorizationRequestor/ 2.5 begin=====`);
  const shopParam = req.query.shop;
  if (!shopParam) return res.status(400).send("No shop param specified");
  
  const state = nonce();
  const installShopUrl = buildInstallUrl(shopParam, state, getRedirectUri());
- console.log(state, `=====state=====`);
- console.log(installShopUrl, `=====installShopUrl=====`);
- return;
+
  // set generated nonce to a cookie keyed to "state". (Will be used for verification)
  res.cookie("state", state);
  
  // redirect browser to the scopes page for front channel permission granting
- console.log(res, `=====authorizationRequestor res / end=====`);
+ console.log(`=====/auth...requestor end=====`);
  res.redirect(installShopUrl);
 });
 
 
-express.get("/accessTokenRequestor", async (req: Request, res: Response): Promise<Response|void> => {
- console.log(`=====/accessTokenRequestor=====`);
+express.get("/accessTokenRequestor/", async (req: Request, res: Response): Promise<Response|void> => {
  console.log(req, `=====accessTokenRequestor req / begin=====`);
  const {shop, code, state} = req.query;
+ console.log(util.inspect(req.query, {colors: true, depth : 10}), `=====req.query=====`);
  
  // parse the cookie string into an array. if state cookie is "", err
  const stateCookie = cookie.parse(req.headers.cookie as string || "").state;
@@ -130,23 +144,24 @@ express.get("/accessTokenRequestor", async (req: Request, res: Response): Promis
  if (hash !== hmac) return res.status(400).send("HMAC validation failed");
  
  try {
-  const authorizedCredentials = {
+  const authorizedCredentials: ShopifyAuthCodeCredentials = {
    client_id : SHOPIFY_API_KEY
    , client_secret : SHOPIFY_API_SECRET
    , code
   };
-  const tokenResponse = await  fetchAccessToken(shop, authorizedCredentials);
+  const tokenResponse = await fetchAccessToken(shop, authorizedCredentials);
   const {access_token} = tokenResponse;
   
   const shopData = await fetchShopData(shop, access_token);
   
   // todo set this part up to load the hosted index.html file with my React app
   console.log(res, `=====accessTokenRequestor res / end=====`);
+  console.log(util.inspect(res, {colors: true, depth : 10}), `=====res=====`);
   res.send(shopData.shop)
  }
  catch (e) {
-  console.log(e, `=====error during fetchAccessToken=====`);
-  res.status(400).send("error during fetchAccessToken")
+  console.log(util.inspect(e, {colors: true, depth : 10}), `=====Error during fetch Access Token=====`);
+  res.status(400).send("Error during fetchAccessToken")
  }
 });
 
