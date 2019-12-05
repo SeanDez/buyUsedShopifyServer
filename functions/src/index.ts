@@ -23,8 +23,6 @@ firebaseAdmin.initializeApp({
 
 const express = Express();
 
-express.get('/', (req, res) => res.json({"success" : "the test route works"}));
-
 
 ////// Router Middleware //////
 express.use(initialAuthRouter);
