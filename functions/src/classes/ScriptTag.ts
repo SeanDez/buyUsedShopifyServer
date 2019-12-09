@@ -25,6 +25,7 @@ interface GetAllScriptTags {
 
 class ScriptTag extends ShopifyApiBase {
   protected filePath: string;
+  protected localFileName: string;
   
   
   constructor(storeDomain: string, generalToken: string, filePath: string) {
@@ -32,11 +33,12 @@ class ScriptTag extends ShopifyApiBase {
     // passes down local inputs one level into the parent constructor
     super(storeDomain, generalToken);
     this.filePath = filePath;
+    this.localFileName = this.getFileName(this.filePath);
   }
   
   // --------------- Child Methods
   
-  async fetchAllScriptTags(): Promise<ScriptTagObject[]> {
+  protected async fetchAllScriptTags(): Promise<ScriptTagObject[]> {
     try {
       const response = await fetch(`https://${this.storeDomain}/admin/api/2019-10/script_tags.json`, {
         method : "get"
@@ -55,36 +57,64 @@ class ScriptTag extends ShopifyApiBase {
     }
   }
   
-  protected getFilename(filePath: string): string {
-    const fileNameMatches: string[]|null = filePath.match(/\/{1}(\w+.js)$/);
-    if (Boolean(fileNameMatches)) {
+  public getFileName(filePathOrUrl: string): string {
+    const fileNameMatch: string[]|null = filePathOrUrl.match(/\/{1}(\w+.js)$/);
+    if (Boolean(fileNameMatch)) {
       // capture group is always assigned to [1], even when full match === capture group
-      return fileNameMatches![1];
+      return fileNameMatch![1];
     }
-    else { throw Error("Local filename not found"); }
+    else { throw Error("Filename not found"); }
   }
 
+  // todo simplify this a ton to exact match my hosted, unchanging sc url
   protected async exists(): Promise<boolean> {
     const scriptTags: ScriptTagObject[] = await this.fetchAllScriptTags();
     
     const scriptTagFileNames: string[] = scriptTags.map((scriptTagRecord: ScriptTagObject) => {
-      const fileName: string = this.getFilename(scriptTagRecord.src);
-      return fileName;
+      const tagFileName: string = this.getFileName(scriptTagRecord.src);
+      return tagFileName;
     });
 
-    // match against local filename
-    const localFileName: string = this.getFilename(this.filePath);
-    if (scriptTagFileNames.indexOf(localFileName) > -1) { return true; }
-    return false;
+    // if has an index, return true, else false
+    return Boolean(scriptTagFileNames.indexOf(this.localFileName) > -1);
+  }
+  
+  
+  protected async externallyHostedScriptTagExists(remoteTagUrl: string): Promise<boolean> {
+    const scriptTags: ScriptTagObject[] = await this.fetchAllScriptTags();
+    const foundValue = scriptTags.find(scriptTag => (
+      scriptTag.src === remoteTagUrl));
+    
+    return Boolean(foundValue);
+  }
+  
+  protected async createNew(): Promise<boolean> {
+    // post script tag to the api. on success return true, else throw error
+    const response = await fetch(`${this.storeDomain}/admin/api/2019-10/script_tags.json`, {
+      method : 'post'
+      , headers : {
+        'content-type' : 'application/json'
+        , "X-Shopify-Auth-Token" : this.generalToken
+      }
+      , body : JSON.stringify({
+        script_tag : {
+          event : "onload"
+          , src : "https://firebaseHostingPlaceholder.com/consoleLog.js"
+        }
+      })
+    });
+    
+    const convertedResponse: { script_tag : ScriptTagObject} = await response.json();
+    return Boolean(convertedResponse);
   }
   
   // --------------- Public Methods
   
-  async verifyOrCreateNew() {
-    if (this.exists()) { return true }
-    // const tagPosted = this.createNew();
-    // if (Boolean(tagPosted)) { return true; }
-    return false;
+  public async verifyOrCreateNew() {
+    if (await this.exists()) { return true }
+    // const tagPosted: boolean = this.createNew();
+    // if (Boolean(tagPosted) { return true; }
+    throw Error(`ScriptTag ${this.filePath} not verified or posted`)
   }
   
   

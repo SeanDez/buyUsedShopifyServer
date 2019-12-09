@@ -10,9 +10,10 @@
     "esModuleInterop" : true,
     "noEmit" : false
 //    "resolveJsonModule" : true
+    // , "types": ["reflect-metadata", "jest"]
+    , "typeRoots": ["./types", "./node_modules/@types"]
   },
   "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude" : ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

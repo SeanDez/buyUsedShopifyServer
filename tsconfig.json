@@ -3,7 +3,8 @@
     "allowJs": false,
     "module": "CommonJS",
     "esModuleInterop": true,
-    "types": [],
+    "types": ["jest"],
+    "typeRoots" : ["./types", "./node_modules/@types"],
     "target": "es5",
     "sourceMap": true,
     "noEmitOnError": false,
@@ -30,6 +31,7 @@
     "node_modules"
     , ".idea"
     , "public"
+    , "**/*.test.ts"
   ],
   "lib": [
     "dom",
