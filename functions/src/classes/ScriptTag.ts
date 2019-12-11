@@ -25,7 +25,7 @@ interface GetAllScriptTags {
 
 class ScriptTag extends ShopifyApiBase {
   protected filePath: string;
-  public localFileName: string;
+  protected localFileName: string;
   
   
   constructor(storeDomain: string, generalToken: string, filePath: string) {
@@ -57,7 +57,7 @@ class ScriptTag extends ShopifyApiBase {
     }
   }
   
-  public getFileName(filePathOrUrl: string): string {
+  protected getFileName(filePathOrUrl: string): string {
     const fileNameMatch: string[]|null = filePathOrUrl.match(/\/?(\w+.js)$/);
     if (Boolean(fileNameMatch)) {
       // capture group is always assigned to [1], even when full match === capture group
