@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
+    "integrationTest" : "",
+    "unitTest": "jest --watch --projects=<rootDir>/functions/src/classes/unitTests/*",
     "start": "functions-framework --target=helloWorld"
   },
   "keywords": [],

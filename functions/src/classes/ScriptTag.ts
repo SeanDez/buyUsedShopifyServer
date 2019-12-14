@@ -44,7 +44,7 @@ class ScriptTag extends ShopifyApiBase {
         method : "get"
         , headers : {
           "content-type" : 'application/json'
-          , "X-Shopify-Auth-Token" : this.generalToken // confirm this is the right header key
+          , "X-Shopify-Access-Token" : this.generalToken // confirm this is the right header key
         }
       });
       
@@ -90,7 +90,7 @@ class ScriptTag extends ShopifyApiBase {
       method : 'post'
       , headers : {
         'content-type' : 'application/json'
-        , "X-Shopify-Auth-Token" : this.generalToken
+        , "X-Shopify-Access-Token" : this.generalToken
       }
       , body : JSON.stringify({
         script_tag : {
