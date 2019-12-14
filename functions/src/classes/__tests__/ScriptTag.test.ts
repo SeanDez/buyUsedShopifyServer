@@ -97,6 +97,7 @@ beforeEach(() => {
 afterEach(() => {
   // bad naming. This means clear all mocks
   jest.restoreAllMocks();
+  fetchMock.reset();
 });
 
 
@@ -144,70 +145,100 @@ describe('constructor', () => {
       scriptTagTester.getFileName("")
     }).toThrow();
   });
-
-  test("exists() is true", async() => {
-    jest.spyOn(ScriptTagTester.prototype, "fetchAllScriptTags")
-      .mockResolvedValueOnce(dummyScriptTagsWithTarget);
-    
-    const scriptTagTester = new ScriptTagTester("","", "https://firebaseDomain.com/scriptTag.js");
-
-    expect(await scriptTagTester.exists()).toEqual(true);
-  });
-
-  test("exists() throws Error for no matching constructor filename", async() => {
-    jest.spyOn(ScriptTagTester.prototype, "fetchAllScriptTags")
-      .mockResolvedValueOnce(dummyScriptTagsWithTarget);
-    
-    // todo this line has the error
-    const scriptTagTester = new ScriptTagTester("","", "https://firebaseDomain.com/scriptTag.js");
-
-    // await expect(Promise.reject(new Error("Failed")))
-    //   .rejects
-    //   .toThrow();
-  });
-  
-  // todo repair this test so that Jest sees it returns false, not {}
-  test("exists() returns false for no matching scriptTag from fake fetch", async() => {
-    jest.spyOn(ScriptTagTester.prototype, "fetchAllScriptTags")
-      .mockResolvedValueOnce(dummyScriptTagsMissingTarget);
-    const scriptTagTester = new ScriptTagTester("","", "https://firebaseDomain.com/scriptTag.js");
-
-    await expect(scriptTagTester.exists()).resolves.toStrictEqual(false);
-  });
-  
-  
-  test("internalFetch()", async () => {
-    fetchMock.mock("*", {fetchMockKey: "fetchMockVal"});
-    const scriptTagTester = new ScriptTagTester("", "", "x.js");
-    // await expect(scriptTagTester.internalFetch()).resolves.toEqual({key1 : "val1"});
-    
-    const result = await scriptTagTester.internalFetch();
-    const json = await result.json();
-    console.log(json, `=====json=====`);
-    expect(json).toEqual({fetchMockKey : 'fetchMockVal'});
-  });
-  
-  
-  test("createNew: creates new scriptTag", async () => {
-    // fetchMock.mockResponse(JSON.stringify(1));
-    // const data = await fetchMock("x");
-  
-    const fetch = jest.fn().mockImplementation(async () => Promise.resolve(1));
-    await expect (fetch()).resolves.toStrictEqual(1);
-    
-    // await expect(data.json()).resolves.toStrictEqual(2);
-  });
-  
-  
-  test.skip("verifyOrCreateNew", async () => {
-    const scriptTagTester = new ScriptTagTester("storeDomain.com", "tokenValue", path.join(__dirname, "/fileName.js"));
-    
-  })
   
 });
 
 
+test("exists() is true", async() => {
+  jest.spyOn(ScriptTagTester.prototype, "fetchAllScriptTags")
+    .mockResolvedValueOnce(dummyScriptTagsWithTarget);
+  
+  const scriptTagTester = new ScriptTagTester("","", "https://firebaseDomain.com/scriptTag.js");
+  
+  expect(await scriptTagTester.exists()).toEqual(true);
+});
 
+test("exists() throws Error for no matching constructor filename", async() => {
+  jest.spyOn(ScriptTagTester.prototype, "fetchAllScriptTags")
+    .mockResolvedValueOnce(dummyScriptTagsWithTarget);
+  
+  // todo this line has the error
+  const scriptTagTester = new ScriptTagTester("","", "https://firebaseDomain.com/scriptTag.js");
+});
+
+
+test("exists() returns false for no matching scriptTag from fake fetch", async() => {
+  jest.spyOn(ScriptTagTester.prototype, "fetchAllScriptTags")
+    .mockResolvedValueOnce(dummyScriptTagsMissingTarget);
+  const scriptTagTester = new ScriptTagTester("","", "https://firebaseDomain.com/scriptTag.js");
+  
+  await expect(scriptTagTester.exists()).resolves.toStrictEqual(false);
+});
+
+
+test("internalFetch() overwrites the default return value", async () => {
+  fetchMock.getOnce("*", {fetchMockKey: "fetchMockVal"});
+  const scriptTagTester = new ScriptTagTester("", "", "x.js");
+  // await expect(scriptTagTester.internalFetch()).resolves.toEqual({key1 : "val1"});
+  
+  const result = await scriptTagTester.internalFetch();
+  const json = await result.json();
+  expect(json).toEqual({fetchMockKey : 'fetchMockVal'});
+});
+
+
+test("createNew: creates new scriptTag", async () => {
+  // mock fetch to return a dummy object
+  // this is more for testing mock-fetch than anything else. The next test will matter more though
+  fetchMock.postOnce("*", {
+    script_tag : {
+      id : "001"
+      , src : "https://sampleFirebaseUrl.com/scriptName.js"
+      , event : "onload"
+      , created_at : "sample created datetime string here"
+      , updated_at : "sample updated datetime string here"
+      , display_scope : DisplayScope.onlineStore
+    }
+  });
+  
+  const scriptTagTester = new ScriptTagTester("sub.mainDomain.com", "genToken", "/x.js");
+  
+  const tagIsPosted: boolean = await scriptTagTester.createNew();
+  expect(tagIsPosted).toStrictEqual(true);
+});
+
+
+describe("verifyOrCreateNew()", () => {
+  ////// Tests //////
+  // verifies a current tag is already there
+  // when tag is not found, it is created
+  
+  test("verifies a current tag is already there", async () => {
+    // mock .exists() to return true
+    // verify the outer method returns true
+    jest.spyOn(ScriptTagTester.prototype, "exists")
+      .mockResolvedValueOnce(true);
+    const scriptTagTester = new ScriptTagTester("storeDomain.com", "tokenValue", path.join(__dirname, "/fileName.js"));
+    
+    const tagIsVerifiedToAlreadyExist = await scriptTagTester.verifyOrCreateNew();
+    expect(tagIsVerifiedToAlreadyExist).toStrictEqual(true);
+  });
+  
+  
+  test("when tag is not found, it is created", async () => {
+    // mock .exists() to return false
+    // mock .createNew() to return true
+    // check that
+    jest.spyOn(ScriptTagTester.prototype, "exists")
+      .mockResolvedValueOnce(false);
+    jest.spyOn(ScriptTagTester.prototype, "createNew")
+      .mockResolvedValueOnce(true);
+    const scriptTagTester = new ScriptTagTester("storeDomain.com", "tokenValue", path.join(__dirname, "/fileName.js"));
+    
+    const oldTagNotThereNewTagIsCreated = await scriptTagTester.verifyOrCreateNew();
+    expect(oldTagNotThereNewTagIsCreated).toStrictEqual(true);
+  })
+});
 
 
 

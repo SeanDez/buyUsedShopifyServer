@@ -86,7 +86,7 @@ class ScriptTag extends ShopifyApiBase {
   
   protected async createNew(): Promise<boolean> {
     // post script tag to the api. on success return true, else throw error
-    const response = await fetch(`${this.storeDomain}/admin/api/2019-10/script_tags.json`, {
+    const response = await fetch(`https://${this.storeDomain}/admin/api/2019-10/script_tags.json`, {
       method : 'post'
       , headers : {
         'content-type' : 'application/json'
@@ -101,7 +101,9 @@ class ScriptTag extends ShopifyApiBase {
     });
     
     const convertedResponse: { script_tag : ScriptTagObject} = await response.json();
-    return Boolean(convertedResponse);
+    
+    // test the id since that is required
+    return Boolean(convertedResponse.script_tag.id);
   }
   
   // --------------- Public Methods
