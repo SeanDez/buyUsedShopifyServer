@@ -1,13 +1,13 @@
-import fetch from "isomorphic-fetch";
+import "isomorphic-fetch";
 import ShopifyApiBase from "./ShopifyApiBase";
 import {securityRules} from "firebase-admin";
 
 
 // --------------- Interfaces
 
-enum DisplayScope { all = "all", orderStatus = "order-status", onlineStore = "online-store" }
+export enum DisplayScope { all = "all", orderStatus = "order-status", onlineStore = "online-store" }
 
-interface ScriptTagObject {
+export interface ScriptTagObject {
   "id": string,
   "src": string,
   "event": "onload",
@@ -79,13 +79,9 @@ class ScriptTag extends ShopifyApiBase {
     return Boolean(scriptTagFileNames.indexOf(this.localFileName) > -1);
   }
   
-  
-  protected async externallyHostedScriptTagExists(remoteTagUrl: string): Promise<boolean> {
-    const scriptTags: ScriptTagObject[] = await this.fetchAllScriptTags();
-    const foundValue = scriptTags.find(scriptTag => (
-      scriptTag.src === remoteTagUrl));
-    
-    return Boolean(foundValue);
+  public async internalFetch(): Promise<Response> {
+    const response = await fetch('http://test.com/');
+    return response;
   }
   
   protected async createNew(): Promise<boolean> {
@@ -112,11 +108,10 @@ class ScriptTag extends ShopifyApiBase {
   
   public async verifyOrCreateNew() {
     if (await this.exists()) { return true }
-    // const tagPosted: boolean = this.createNew();
-    // if (Boolean(tagPosted) { return true; }
+    const tagPosted: boolean = await this.createNew();
+    if (Boolean(tagPosted)) { return true; }
     throw Error(`ScriptTag ${this.filePath} not verified or posted`)
   }
-  
   
 }
 
