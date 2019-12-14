@@ -5,7 +5,11 @@ import {securityRules} from "firebase-admin";
 
 // --------------- Interfaces
 
-export enum DisplayScope { all = "all", orderStatus = "order-status", onlineStore = "online-store" }
+export enum DisplayScope {
+  all = "all",
+  orderStatus = "order-status",
+  onlineStore = "online-store"
+}
 
 export interface ScriptTagObject {
   "id": string,
