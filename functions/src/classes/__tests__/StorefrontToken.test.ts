@@ -1,4 +1,14 @@
 import StorefrontToken, {GetStorefrontAccessTokens, Scope, StorefrontTokenObject} from "../StorefrontToken";
+import fetchMock from "fetch-mock";
+
+
+/* * * * * * * * * * * * * * * * * * * * *
+                Setup
+* * * * * * * * * * * * * * * * * * * * */
+
+beforeEach(() => {
+  fetchMock.reset();
+});
 
 class StorefrontTokenTester extends StorefrontToken {
   constructor(storeDomain: string, generalToken: string) {
@@ -21,23 +31,49 @@ class StorefrontTokenTester extends StorefrontToken {
   
 }
 
+/* * * * * * * * * * * * * * * * * * * * *
+                Test Suite
+* * * * * * * * * * * * * * * * * * * * */
 
 describe("getOrCreate", () => {
-  test.skip("list has matching token and returns it", () => {
-
+  test("list has matching token and returns it", async () => {
+  const getStorefrontAccessTokensDataHasMatch = buildTokenList(true);
+  const storefrontTokenTester = new StorefrontTokenTester("", "");
+  
+  // mock the exact fetch response (NOT the return!)
+  fetchMock.getOnce("*", getStorefrontAccessTokensDataHasMatch);
+  const token = await storefrontTokenTester.getOrCreate();
+  
+  expect(token).toStrictEqual(matchingToken);
   });
   
-  test.skip("list has no matching token. creates and returns new token", () => {
   
+  test("list has no matching token. creates and returns new token", async () => {
+    const getStorefrontAccessTokensDataNoMatch = buildTokenList(false);
+    const storefrontTokenTester = new StorefrontTokenTester("", "");
+    
+    // get list, but no match. then post/create a dummy token
+    fetchMock.getOnce("*", getStorefrontAccessTokensDataNoMatch);
+    fetchMock.postOnce("*", {storefront_access_token : matchingToken});
+    
+    const createdToken = await storefrontTokenTester.getOrCreate();
+    expect(createdToken).toStrictEqual(matchingToken);
   });
   
-  test.skip("list is empty. creates and returns a new token", () => {
   
+  test("list is empty. creates and returns a new token", async () => {
+    const storefrontTokenTester = new StorefrontTokenTester("", "");
+    
+    fetchMock.getOnce("*", {storefront_access_tokens: []});
+    fetchMock.postOnce("*", {storefront_access_token : matchingToken});
+  
+    const createdToken = await storefrontTokenTester.getOrCreate();
+    expect(createdToken).toStrictEqual(matchingToken);
   });
 });
 
 
-const staticTokenData = {
+const matchingToken: StorefrontTokenObject = {
   id: 38268,
   access_token: '2dftywu247',
   access_scope: Scope.unauthReadProductListings,
@@ -47,7 +83,7 @@ const staticTokenData = {
 
 const dummyScopes = ['write_products', 'authenticated_read_products', 'administrator'];
 
-const buildTokenList = (matchingToken: boolean): StorefrontTokenObject[] => {
+const buildTokenList = (hasMatch: boolean): GetStorefrontAccessTokens => {
   const tokenList: StorefrontTokenObject[] = [];
   const listLength = Math.random() * 20;
   
@@ -62,9 +98,9 @@ const buildTokenList = (matchingToken: boolean): StorefrontTokenObject[] => {
     })
   }
   
-  if (matchingToken) {
-    tokenList.splice(Math.random() * listLength, 0, staticTokenData);
+  if (hasMatch) {
+    tokenList.splice(Math.random() * listLength, 0, matchingToken);
   }
   
-  return tokenList;
+  return { storefront_access_tokens : tokenList};
 };

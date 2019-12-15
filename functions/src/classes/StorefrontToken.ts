@@ -83,13 +83,12 @@ export default class StorefrontToken extends ShopifyApiBase {
         return token.access_scope === Scope.unauthReadProductListings
       });
       
-      // if not undefined, return it
       if (Boolean(readProductsToken)) {
         return readProductsToken!;
       }
     }
   
-    // no token found. So create and return new token
+    // no token found. Create and return new token
     const newToken: StorefrontTokenObject = await this.createNew();
     return newToken;
   
