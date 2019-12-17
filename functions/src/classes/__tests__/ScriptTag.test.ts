@@ -10,6 +10,20 @@ require("node-fetch");
 
 
 class ScriptTagTester extends ScriptTag {
+  public fetchGetOptions = {
+    headers : {
+      'content-type' : 'application/json'
+      , 'X-Shopify-Access-Token' : this.generalToken
+    }
+  };
+  public fetchPostOptions = {
+    headers : {
+      'content-type' : 'application/json'
+      , 'X-Shopify-Access-Token' : this.generalToken
+    }
+  };
+  public domain = 'https://my.storeDomain.com/admin/api/2019-10/script_tags.json';
+  
   public localFileName;
   
   constructor(storeDomain, generalToken, filePath) {
@@ -188,9 +202,11 @@ test("internalFetch() overwrites the default return value", async () => {
 
 
 test("createNew: creates new scriptTag", async () => {
+  const scriptTagTester = new ScriptTagTester("my.storeDomain.com", "genToken", "/x.js");
+  
   // mock fetch to return a dummy object
   // this is more for testing mock-fetch than anything else. The next test will matter more though
-  fetchMock.postOnce("*", {
+  fetchMock.postOnce(scriptTagTester.domain, {
     script_tag : {
       id : "001"
       , src : "https://sampleFirebaseUrl.com/scriptName.js"
@@ -199,9 +215,7 @@ test("createNew: creates new scriptTag", async () => {
       , updated_at : "sample updated datetime string here"
       , display_scope : DisplayScope.onlineStore
     }
-  });
-  
-  const scriptTagTester = new ScriptTagTester("sub.mainDomain.com", "genToken", "/x.js");
+  }, scriptTagTester.fetchPostOptions);
   
   const tagIsPosted: boolean = await scriptTagTester.createNew();
   expect(tagIsPosted).toStrictEqual(true);

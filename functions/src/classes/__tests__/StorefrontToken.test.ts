@@ -11,6 +11,20 @@ beforeEach(() => {
 });
 
 class StorefrontTokenTester extends StorefrontToken {
+  public fetchGetOptions = {
+    headers : {
+      'content-type' : 'application/json'
+      , 'X-Shopify-Access-Token' : this.generalToken
+    }
+  };
+  public fetchPostOptions = {
+    headers : {
+      'content-type' : 'application/json'
+      , 'X-Shopify-Access-Token' : this.generalToken
+    }
+  };
+  public domain = 'https://my.storeDomain.com/admin/api/2019-10/storefront_access_tokens.json';
+  
   constructor(storeDomain: string, generalToken: string) {
     super(storeDomain, generalToken);
   }
@@ -50,11 +64,12 @@ describe("getOrCreate", () => {
   
   test("list has no matching token. creates and returns new token", async () => {
     const getStorefrontAccessTokensDataNoMatch = buildTokenList(false);
-    const storefrontTokenTester = new StorefrontTokenTester("", "");
+    const storefrontTokenTester = new StorefrontTokenTester("my.storeDomain.com", "generalToken");
     
     // get list, but no match. then post/create a dummy token
-    fetchMock.getOnce("*", getStorefrontAccessTokensDataNoMatch);
-    fetchMock.postOnce("*", {storefront_access_token : matchingToken});
+    fetchMock
+      .getOnce("https://my.storeDomain.com/admin/api/2019-10/storefront_access_tokens.json", getStorefrontAccessTokensDataNoMatch, storefrontTokenTester.fetchGetOptions)
+      .postOnce("https://my.storeDomain.com/admin/api/2019-10/storefront_access_tokens.json", {storefront_access_token : matchingToken}, storefrontTokenTester.fetchPostOptions);
     
     const createdToken = await storefrontTokenTester.getOrCreate();
     expect(createdToken).toStrictEqual(matchingToken);
@@ -62,10 +77,11 @@ describe("getOrCreate", () => {
   
   
   test("list is empty. creates and returns a new token", async () => {
-    const storefrontTokenTester = new StorefrontTokenTester("", "");
+    const storefrontTokenTester = new StorefrontTokenTester("my.storeDomain.com", "");
     
-    fetchMock.getOnce("*", {storefront_access_tokens: []});
-    fetchMock.postOnce("*", {storefront_access_token : matchingToken});
+    fetchMock
+      .getOnce("https://my.storeDomain.com/admin/api/2019-10/storefront_access_tokens.json", {storefront_access_tokens: []})
+      .postOnce("*", {storefront_access_token : matchingToken});
   
     const createdToken = await storefrontTokenTester.getOrCreate();
     expect(createdToken).toStrictEqual(matchingToken);
