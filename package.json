@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "integrationTest" : "",
-    "unitTest": "jest --watch --projects=<rootDir>/functions/src/classes/unitTests/*",
+    "test": "jest --watch --testNamePattern='^(?!\\[functional\\]).+$'",
+    "test:functional": "jest --watch --testNamePattern='\\[functional\\]'",
     "start": "functions-framework --target=helloWorld"
   },
   "keywords": [],
