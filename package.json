@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "integrationTest" : "",
+    "integrationTest": "",
     "test": "jest --watch --testNamePattern='^(?!\\[functional\\]).+$'",
     "test:functional": "jest --watch --testNamePattern='\\[functional\\]'",
     "start": "functions-framework --target=helloWorld"
@@ -32,7 +32,9 @@
     "fetch-mock": "^8.0.1",
     "jest": "^24.9.0",
     "jest-fetch-mock": "^2.1.2",
+    "jest-puppeteer": "^4.4.0",
     "node-fetch": "^2.6.0",
+    "puppeteer": "^2.0.0",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.2"
   }

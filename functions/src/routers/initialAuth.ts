@@ -1,4 +1,6 @@
 import express, {Request, Response} from "express";
+
+import OAuth from "../classes/OAuth";
 import {ShopifyAuthCodeCredentials} from "../interfaces";
 import {getRedirectUri, fetchShopData, fetchAccessToken, generateEncryptedHash, buildInstallUrl, buildAccessTokenRequestUrl, buildShopDataRequestUrl} from "../utilities/oauthHelpers";
 import keys from "../keys";
@@ -22,6 +24,12 @@ router.get('/', (req: Request, res: Response): void => {
  */
 router.get("/authorizationRequestor/", (req: Request, res: Response): Response|void => {
  console.log(`=====/authorizationRequestor/ 2.5 begin=====`);
+ 
+ const oAuth = new OAuth(req, res, keys);
+ 
+ // this will do a res.redirect
+ oAuth.requestScopeGrants();
+ 
  const shopParam = req.query.shop;
  if (!shopParam) return res.status(400).send("No shop param specified");
  
