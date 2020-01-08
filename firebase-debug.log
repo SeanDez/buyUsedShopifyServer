@@ -1,0 +1,29 @@
+[debug] [2020-01-08T19:51:58.558Z] ----------------------------------------------------------------------
+[debug] [2020-01-08T19:51:58.561Z] Command:       /home/owner/.nvm/versions/node/v12.4.0/bin/node /home/owner/.nvm/versions/node/v12.4.0/bin/firebase emulators:start --only functions
+[debug] [2020-01-08T19:51:58.561Z] CLI Version:   7.8.1
+[debug] [2020-01-08T19:51:58.561Z] Platform:      linux
+[debug] [2020-01-08T19:51:58.561Z] Node Version:  v12.4.0
+[debug] [2020-01-08T19:51:58.561Z] Time:          Thu Jan 09 2020 02:51:58 GMT+0700 (Indochina Time)
+[debug] [2020-01-08T19:51:58.561Z] ----------------------------------------------------------------------
+[debug] [2020-01-08T19:51:58.561Z] 
+[info] i  emulators: Starting emulators: functions
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "/home/owner/PhpstormProjects/shopify/buyUsedServer/functions" for Cloud Functions...
+[debug] [2020-01-08T19:51:58.977Z] [worker-~diagnostic~-54958f30-2f23-4197-9a6f-e401e5006636]: Assigning socketPath: /tmp/fire_emu_20202.sock
+[debug] [2020-01-08T19:51:58.977Z] [worker-~diagnostic~-54958f30-2f23-4197-9a6f-e401e5006636]: BUSY
+[debug] [2020-01-08T19:51:59.286Z] [runtime-status] [20202] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-08T19:51:59.287Z] [runtime-status] [20202] Disabled runtime features: undefined
+[debug] [2020-01-08T19:51:59.290Z] [runtime-status] [20202] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-08T19:51:59.291Z] [runtime-status] [20202] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-08T19:51:59.457Z] [runtime-status] [20202] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
+[debug] [2020-01-08T19:51:59.457Z] [runtime-status] [20202] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2020-01-08T19:51:59.499Z] [runtime-status] [20202] Checked functions.config() {"config":{"env":{"google_application_credentials":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/buyusedshopify-firebase-adminsdk-serviceAccount.json","scopes":"read_products,write_products,unauthenticated_read_product_listings","test":"val","shopify_api_secret":"4d6d2677d11030ee8e9dbee32c08bd15","client_app_url":"https://us-central1-buyusedshopify.cloudfunctions.net/buyUsedServer","shopify_api_key":"d030d96fb2f5bf3eb016f380a099f799"}}}
+[debug] [2020-01-08T19:51:59.499Z] [runtime-status] [20202] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-08T19:51:59.501Z] [runtime-status] [20202] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-08T19:51:59.501Z] [runtime-status] [20202] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-08T19:51:59.525Z] [runtime-status] [20202] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
+[info] ✔  functions[buyUsedServer]: http function initialized (http://localhost:5001/buyusedshopify/us-central1/buyUsedServer).
+[info] ✔  All emulators started, it is now safe to connect.
+[debug] [2020-01-08T19:51:59.641Z] [worker-~diagnostic~-54958f30-2f23-4197-9a6f-e401e5006636]: exited
+[debug] [2020-01-08T19:51:59.641Z] [worker-~diagnostic~-54958f30-2f23-4197-9a6f-e401e5006636]: FINISHED

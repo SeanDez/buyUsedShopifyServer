@@ -6,6 +6,7 @@ import queryString from "querystring";
 import ShopifyApiBase from "./ShopifyApiBase";
 import {ShopifyAuthCodeCredentials} from "../interfaces";
 import crypto from "crypto";
+import createApp from "@shopify/app-bridge";
 
 const nonce = require("nonce")();
 
@@ -16,7 +17,7 @@ interface Keys {
   CLIENT_APP_URL: string
 }
 
-export default class OAuth {
+export default class AppBridge {
   protected shopDomain: string;
   protected stateNonce: string;
   protected keys: Keys;
@@ -65,6 +66,7 @@ export default class OAuth {
     }
   }
   
+  
   protected generateEncryptedHash (params: string) {
     return crypto.createHmac("sha256", this.keys.SHOPIFY_API_SECRET).update(params).digest('hex');
   };
@@ -103,15 +105,26 @@ export default class OAuth {
   
   // --------------- Public Methods
   
-  public async requestScopeGrants() {
+  public async setCookieThenRequestScopeGrants(): Promise<void> {
     await this.respondWith400IfNoShop();
     this.setCookieToNonceValue();
     
     const installShopUrl = this.buildInstallUrl();
+    console.log(installShopUrl, `=====installShopUrl=====`);
     
     this.res.redirect(installShopUrl);
   }
   
+  /** can use await app.getState() to get details
+   */
+  public oAuthThenReturnGeneralToken() {
+    const app = createApp({
+      apiKey : this.keys.SHOPIFY_API_KEY
+      , shopOrigin : this.shopDomain
+    });
+    
+    return app;
+  }
   
   /** This method's pattern relies on class properties until the key final step, securing the token. then it just returns it
    */

@@ -1,4 +1,7 @@
 import puppeteer from "puppeteer";
+const env = require('yenv');
+
+
 
 describe("[functional] live tests", () => {
      beforeAll(async () => {
@@ -14,18 +17,26 @@ describe("[functional] live tests", () => {
       // await page.goto('https://google.com');
       
       // log into shopify
-      await page.go("https://partners.shopify.com/1185756/apps/3207477/test", {waitUntil : "load"});
+      await page.goto("https://partners.shopify.com/1185756/apps/3207477/test", {waitUntil : "load"});
       console.log(page.url, `=====arrived at shopify login screen=====`);
       
       // fill and submit form
+      // email screen
       const emailInput = await page.focus("#account_email");
-      
+      await emailInput.type(env.shopify_partner_email);
       
       try {
         const emailForm = await page.$("form[novalidate=novalidate]");
+        await emailForm.evaluate(form => form.submit());
         console.log(`=====login form email page submitted=====`);
       } catch (e) { console.log(e, `=====failed to submit form=====`); }
+  
+      // password screen
+      await page.waitForNavigation({waitUntil: 'load'});
+      console.log(page.url(), `=====navigated to this page=====`);
       
+      
+  
       // grant scopes
       
       

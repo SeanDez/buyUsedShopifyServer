@@ -3,7 +3,7 @@
     "allowJs": false,
     "module": "CommonJS",
     "esModuleInterop": true,
-    "types": ["jest"],
+    "types": ["jest", "node"],
     "typeRoots" : ["./types", "./node_modules/@types"],
     "target": "es5",
     "sourceMap": true,
