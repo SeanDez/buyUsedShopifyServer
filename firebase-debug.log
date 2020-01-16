@@ -1,29 +1,855 @@
-[debug] [2020-01-08T19:51:58.558Z] ----------------------------------------------------------------------
-[debug] [2020-01-08T19:51:58.561Z] Command:       /home/owner/.nvm/versions/node/v12.4.0/bin/node /home/owner/.nvm/versions/node/v12.4.0/bin/firebase emulators:start --only functions
-[debug] [2020-01-08T19:51:58.561Z] CLI Version:   7.8.1
-[debug] [2020-01-08T19:51:58.561Z] Platform:      linux
-[debug] [2020-01-08T19:51:58.561Z] Node Version:  v12.4.0
-[debug] [2020-01-08T19:51:58.561Z] Time:          Thu Jan 09 2020 02:51:58 GMT+0700 (Indochina Time)
-[debug] [2020-01-08T19:51:58.561Z] ----------------------------------------------------------------------
-[debug] [2020-01-08T19:51:58.561Z] 
-[info] i  emulators: Starting emulators: functions
-[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
-[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-01-12T13:12:24.842Z] ----------------------------------------------------------------------
+[debug] [2020-01-12T13:12:24.845Z] Command:       /home/owner/.nvm/versions/node/v10.16.3/bin/node /usr/local/bin/firebase serve --only functions
+[debug] [2020-01-12T13:12:24.845Z] CLI Version:   7.11.0
+[debug] [2020-01-12T13:12:24.845Z] Platform:      linux
+[debug] [2020-01-12T13:12:24.845Z] Node Version:  v10.16.3
+[debug] [2020-01-12T13:12:24.885Z] Time:          Sun Jan 12 2020 20:12:24 GMT+0700 (Indochina Time)
+[debug] [2020-01-12T13:12:24.885Z] ----------------------------------------------------------------------
+[debug] [2020-01-12T13:12:24.885Z] 
+[debug] [2020-01-12T13:12:24.945Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-12T13:12:24.945Z] > authorizing via signed-in user
+[debug] [2020-01-12T13:12:24.946Z] [iam] checking project buyusedshopify for permissions ["firebase.projects.get"]
+[debug] [2020-01-12T13:12:24.948Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-12T13:12:24.948Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-12T13:12:25.345Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-12T13:12:25.432Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/buyusedshopify:testIamPermissions  
+
+[debug] [2020-01-12T13:12:26.951Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-12T13:12:26.954Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/buyusedshopify  
+ 
+[debug] [2020-01-12T13:12:27.499Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[info] ✔  functions: Emulator started at http://localhost:5000
 [info] i  functions: Watching "/home/owner/PhpstormProjects/shopify/buyUsedServer/functions" for Cloud Functions...
-[debug] [2020-01-08T19:51:58.977Z] [worker-~diagnostic~-54958f30-2f23-4197-9a6f-e401e5006636]: Assigning socketPath: /tmp/fire_emu_20202.sock
-[debug] [2020-01-08T19:51:58.977Z] [worker-~diagnostic~-54958f30-2f23-4197-9a6f-e401e5006636]: BUSY
-[debug] [2020-01-08T19:51:59.286Z] [runtime-status] [20202] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
-[debug] [2020-01-08T19:51:59.287Z] [runtime-status] [20202] Disabled runtime features: undefined
-[debug] [2020-01-08T19:51:59.290Z] [runtime-status] [20202] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
-[debug] [2020-01-08T19:51:59.291Z] [runtime-status] [20202] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
-[debug] [2020-01-08T19:51:59.457Z] [runtime-status] [20202] Found google-gax at /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/google-gax/build/src/index.js
-[debug] [2020-01-08T19:51:59.457Z] [runtime-status] [20202] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
-[debug] [2020-01-08T19:51:59.499Z] [runtime-status] [20202] Checked functions.config() {"config":{"env":{"google_application_credentials":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/buyusedshopify-firebase-adminsdk-serviceAccount.json","scopes":"read_products,write_products,unauthenticated_read_product_listings","test":"val","shopify_api_secret":"4d6d2677d11030ee8e9dbee32c08bd15","client_app_url":"https://us-central1-buyusedshopify.cloudfunctions.net/buyUsedServer","shopify_api_key":"d030d96fb2f5bf3eb016f380a099f799"}}}
-[debug] [2020-01-08T19:51:59.499Z] [runtime-status] [20202] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
-[debug] [2020-01-08T19:51:59.501Z] [runtime-status] [20202] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
-[debug] [2020-01-08T19:51:59.501Z] [runtime-status] [20202] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
-[debug] [2020-01-08T19:51:59.525Z] [runtime-status] [20202] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}}
-[info] ✔  functions[buyUsedServer]: http function initialized (http://localhost:5001/buyusedshopify/us-central1/buyUsedServer).
-[info] ✔  All emulators started, it is now safe to connect.
-[debug] [2020-01-08T19:51:59.641Z] [worker-~diagnostic~-54958f30-2f23-4197-9a6f-e401e5006636]: exited
-[debug] [2020-01-08T19:51:59.641Z] [worker-~diagnostic~-54958f30-2f23-4197-9a6f-e401e5006636]: FINISHED
+[debug] [2020-01-12T13:12:27.797Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T13:12:27.798Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-01-12T13:12:27.798Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T13:12:27.800Z] [worker-~diagnostic~-742eaac5-9075-4927-b587-43ddbddedeac]: Assigning socketPath: /tmp/fire_emu_2460.sock
+[debug] [2020-01-12T13:12:27.801Z] [worker-~diagnostic~-742eaac5-9075-4927-b587-43ddbddedeac]: BUSY
+[debug] [2020-01-12T13:12:28.232Z] [runtime-status] [2460] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T13:12:28.234Z] [runtime-status] [2460] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T13:12:28.236Z] [runtime-status] [2460] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T13:12:28.237Z] [runtime-status] [2460] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T13:12:28.238Z] [runtime-status] [2460] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[info] ✔  functions[buyUsedServer]: http function initialized (http://localhost:5000/buyusedshopify/us-central1/buyUsedServer).
+[debug] [2020-01-12T13:12:28.396Z] [worker-~diagnostic~-742eaac5-9075-4927-b587-43ddbddedeac]: IDLE
+[debug] [2020-01-12T13:12:41.305Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-01-12T13:12:41.305Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-01-12T13:12:41.305Z] Accepted request GET /buyusedshopify/us-central1/buyUsedServer/?hmac=903c2ba8a967e4412fbedb5fd418c907a31906ea4adeb162d7bdd1155d9c79c4&shop=seandezoysa.myshopify.com&timestamp=1578834760 --> buyUsedServer
+[debug] [2020-01-12T13:12:41.312Z] [worker-pool] addWorker(buyUsedServer)
+[debug] [2020-01-12T13:12:41.312Z] [worker-pool] Adding worker with key buyUsedServer, total=1
+[debug] [2020-01-12T13:12:41.312Z] [worker-pool] submitWork(triggerId=buyUsedServer)
+[debug] [2020-01-12T13:12:41.312Z] [worker-buyUsedServer-5ce7e365-5054-496d-b262-54d6f7e4b1f2]: Assigning socketPath: /tmp/fire_emu_2516.sock
+[debug] [2020-01-12T13:12:41.312Z] [worker-buyUsedServer-5ce7e365-5054-496d-b262-54d6f7e4b1f2]: BUSY
+[debug] [2020-01-12T13:12:41.708Z] [runtime-status] [2516] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T13:12:41.711Z] [runtime-status] [2516] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T13:12:41.714Z] [runtime-status] [2516] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T13:12:41.715Z] [runtime-status] [2516] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T13:12:41.716Z] [runtime-status] [2516] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T13:12:41.874Z] [runtime-status] [2516] Trigger "buyUsedServer" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "buyUsedServer"
+[debug] [2020-01-12T13:12:41.875Z] [runtime-status] [2516] triggerDefinition {"httpsTrigger":{},"name":"buyUsedServer","entryPoint":"buyUsedServer"}
+[debug] [2020-01-12T13:12:41.875Z] [runtime-status] [2516] Running buyUsedServer in mode HTTPS
+[debug] [2020-01-12T13:12:41.881Z] [runtime-status] [2516] Attempting to listen to socketPath: /tmp/fire_emu_2516.sock
+[debug] [2020-01-12T13:12:41.886Z] [functions] Runtime ready! Sending request!
+[debug] [2020-01-12T13:12:41.897Z] [runtime-status] [2516] Ephemeral server handling GET request
+[debug] [2020-01-12T13:12:41.916Z] [runtime-status] [2516] Ephemeral server survived.
+[info] i  functions: Finished "buyUsedServer" in ~1s
+[debug] [2020-01-12T13:12:41.918Z] [worker-buyUsedServer-5ce7e365-5054-496d-b262-54d6f7e4b1f2]: IDLE
+[debug] [2020-01-12T13:12:41.918Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-01-12T16:14:25.515Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:14:25.620Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:14:26.032Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:14:26.033Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:14:27.035Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:14:27.035Z] [worker-~diagnostic~-742eaac5-9075-4927-b587-43ddbddedeac]: FINISHING
+[debug] [2020-01-12T16:14:27.035Z] [worker-pool] Shutting down IDLE worker (buyUsedServer)
+[debug] [2020-01-12T16:14:27.036Z] [worker-buyUsedServer-5ce7e365-5054-496d-b262-54d6f7e4b1f2]: FINISHING
+[debug] [2020-01-12T16:14:27.060Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:14:27.060Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:14:27.060Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:14:27.061Z] [worker-~diagnostic~-6e5d3d2d-e55e-4814-9442-7631d602c637]: Assigning socketPath: /tmp/fire_emu_29520.sock
+[debug] [2020-01-12T16:14:27.061Z] [worker-~diagnostic~-6e5d3d2d-e55e-4814-9442-7631d602c637]: BUSY
+[debug] [2020-01-12T16:14:27.063Z] [worker-~diagnostic~-742eaac5-9075-4927-b587-43ddbddedeac]: exited
+[debug] [2020-01-12T16:14:27.063Z] [worker-~diagnostic~-742eaac5-9075-4927-b587-43ddbddedeac]: FINISHED
+[debug] [2020-01-12T16:14:27.063Z] [worker-buyUsedServer-5ce7e365-5054-496d-b262-54d6f7e4b1f2]: exited
+[debug] [2020-01-12T16:14:27.063Z] [worker-buyUsedServer-5ce7e365-5054-496d-b262-54d6f7e4b1f2]: FINISHED
+[debug] [2020-01-12T16:14:31.242Z] [runtime-status] [29520] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:14:31.245Z] [runtime-status] [29520] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:14:31.274Z] [runtime-status] [29520] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:14:31.276Z] [runtime-status] [29520] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:14:31.277Z] [runtime-status] [29520] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:14:33.095Z] [worker-~diagnostic~-6e5d3d2d-e55e-4814-9442-7631d602c637]: IDLE
+[debug] [2020-01-12T16:15:53.355Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:15:53.420Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:15:53.930Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:15:53.931Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:15:54.932Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:15:54.932Z] [worker-~diagnostic~-6e5d3d2d-e55e-4814-9442-7631d602c637]: FINISHING
+[debug] [2020-01-12T16:15:54.932Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:15:54.933Z] [worker-pool] Cleaned up workers for buyUsedServer: 1 --> 0
+[debug] [2020-01-12T16:15:54.939Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:15:54.940Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:15:54.940Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:15:54.940Z] [worker-~diagnostic~-67161aed-0ede-47ff-b315-a5157c87f001]: Assigning socketPath: /tmp/fire_emu_29906.sock
+[debug] [2020-01-12T16:15:54.940Z] [worker-~diagnostic~-67161aed-0ede-47ff-b315-a5157c87f001]: BUSY
+[debug] [2020-01-12T16:15:54.941Z] [worker-~diagnostic~-6e5d3d2d-e55e-4814-9442-7631d602c637]: exited
+[debug] [2020-01-12T16:15:54.941Z] [worker-~diagnostic~-6e5d3d2d-e55e-4814-9442-7631d602c637]: FINISHED
+[debug] [2020-01-12T16:15:55.363Z] [runtime-status] [29906] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:15:55.366Z] [runtime-status] [29906] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:15:55.368Z] [runtime-status] [29906] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:15:55.370Z] [runtime-status] [29906] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:15:55.371Z] [runtime-status] [29906] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:15:55.525Z] [worker-~diagnostic~-67161aed-0ede-47ff-b315-a5157c87f001]: IDLE
+[debug] [2020-01-12T16:20:13.341Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:20:13.791Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:20:13.869Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:20:13.869Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:20:14.869Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:20:14.870Z] [worker-~diagnostic~-67161aed-0ede-47ff-b315-a5157c87f001]: FINISHING
+[debug] [2020-01-12T16:20:14.870Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:20:14.877Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:20:14.878Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:20:14.878Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:20:14.878Z] [worker-~diagnostic~-ba52f0e6-0c15-4174-852f-4930347758a9]: Assigning socketPath: /tmp/fire_emu_31101.sock
+[debug] [2020-01-12T16:20:14.878Z] [worker-~diagnostic~-ba52f0e6-0c15-4174-852f-4930347758a9]: BUSY
+[debug] [2020-01-12T16:20:14.879Z] [worker-~diagnostic~-67161aed-0ede-47ff-b315-a5157c87f001]: exited
+[debug] [2020-01-12T16:20:14.879Z] [worker-~diagnostic~-67161aed-0ede-47ff-b315-a5157c87f001]: FINISHED
+[debug] [2020-01-12T16:20:15.300Z] [runtime-status] [31101] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:20:15.303Z] [runtime-status] [31101] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:20:15.305Z] [runtime-status] [31101] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:20:15.326Z] [runtime-status] [31101] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:20:15.326Z] [runtime-status] [31101] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:20:15.494Z] [worker-~diagnostic~-ba52f0e6-0c15-4174-852f-4930347758a9]: IDLE
+[debug] [2020-01-12T16:23:03.932Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:23:04.007Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:23:04.385Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:23:04.386Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:23:05.387Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:23:05.387Z] [worker-~diagnostic~-ba52f0e6-0c15-4174-852f-4930347758a9]: FINISHING
+[debug] [2020-01-12T16:23:05.387Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:23:05.392Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:23:05.392Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:23:05.392Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:23:05.392Z] [worker-~diagnostic~-8d478c28-7698-4f10-ae01-dc2dd91a7af9]: Assigning socketPath: /tmp/fire_emu_31795.sock
+[debug] [2020-01-12T16:23:05.392Z] [worker-~diagnostic~-8d478c28-7698-4f10-ae01-dc2dd91a7af9]: BUSY
+[debug] [2020-01-12T16:23:05.393Z] [worker-~diagnostic~-ba52f0e6-0c15-4174-852f-4930347758a9]: exited
+[debug] [2020-01-12T16:23:05.393Z] [worker-~diagnostic~-ba52f0e6-0c15-4174-852f-4930347758a9]: FINISHED
+[debug] [2020-01-12T16:23:05.766Z] [runtime-status] [31795] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:23:05.769Z] [runtime-status] [31795] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:23:05.771Z] [runtime-status] [31795] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:23:05.772Z] [runtime-status] [31795] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:23:05.774Z] [runtime-status] [31795] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:23:05.990Z] [worker-~diagnostic~-8d478c28-7698-4f10-ae01-dc2dd91a7af9]: IDLE
+[debug] [2020-01-12T16:25:34.596Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:25:34.702Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:25:35.044Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:25:35.044Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:25:36.045Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:25:36.045Z] [worker-~diagnostic~-8d478c28-7698-4f10-ae01-dc2dd91a7af9]: FINISHING
+[debug] [2020-01-12T16:25:36.046Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:25:36.052Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:25:36.052Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:25:36.052Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:25:36.052Z] [worker-~diagnostic~-c128e676-b091-4569-8803-fe05901020f7]: Assigning socketPath: /tmp/fire_emu_32337.sock
+[debug] [2020-01-12T16:25:36.052Z] [worker-~diagnostic~-c128e676-b091-4569-8803-fe05901020f7]: BUSY
+[debug] [2020-01-12T16:25:36.053Z] [worker-~diagnostic~-8d478c28-7698-4f10-ae01-dc2dd91a7af9]: exited
+[debug] [2020-01-12T16:25:36.053Z] [worker-~diagnostic~-8d478c28-7698-4f10-ae01-dc2dd91a7af9]: FINISHED
+[debug] [2020-01-12T16:25:36.461Z] [runtime-status] [32337] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:25:36.464Z] [runtime-status] [32337] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:25:36.467Z] [runtime-status] [32337] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:25:36.468Z] [runtime-status] [32337] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:25:36.469Z] [runtime-status] [32337] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:25:36.647Z] [worker-~diagnostic~-c128e676-b091-4569-8803-fe05901020f7]: IDLE
+[debug] [2020-01-12T16:27:19.766Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:27:19.845Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:27:20.178Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:27:20.179Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:27:21.180Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:27:21.180Z] [worker-~diagnostic~-c128e676-b091-4569-8803-fe05901020f7]: FINISHING
+[debug] [2020-01-12T16:27:21.180Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:27:21.187Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:27:21.188Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:27:21.188Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:27:21.188Z] [worker-~diagnostic~-64fd5f04-5097-41d2-97ac-aab474634502]: Assigning socketPath: /tmp/fire_emu_32611.sock
+[debug] [2020-01-12T16:27:21.188Z] [worker-~diagnostic~-64fd5f04-5097-41d2-97ac-aab474634502]: BUSY
+[debug] [2020-01-12T16:27:21.189Z] [worker-~diagnostic~-c128e676-b091-4569-8803-fe05901020f7]: exited
+[debug] [2020-01-12T16:27:21.189Z] [worker-~diagnostic~-c128e676-b091-4569-8803-fe05901020f7]: FINISHED
+[debug] [2020-01-12T16:27:21.606Z] [runtime-status] [32611] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:27:21.608Z] [runtime-status] [32611] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:27:21.611Z] [runtime-status] [32611] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:27:21.612Z] [runtime-status] [32611] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:27:21.613Z] [runtime-status] [32611] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:27:21.770Z] [worker-~diagnostic~-64fd5f04-5097-41d2-97ac-aab474634502]: IDLE
+[debug] [2020-01-12T16:27:48.809Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:27:48.892Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:27:49.299Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:27:49.299Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:27:50.300Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:27:50.300Z] [worker-~diagnostic~-64fd5f04-5097-41d2-97ac-aab474634502]: FINISHING
+[debug] [2020-01-12T16:27:50.300Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:27:50.305Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:27:50.305Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:27:50.305Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:27:50.306Z] [worker-~diagnostic~-c436cffe-c969-4565-83ca-dc43794aa83d]: Assigning socketPath: /tmp/fire_emu_32706.sock
+[debug] [2020-01-12T16:27:50.306Z] [worker-~diagnostic~-c436cffe-c969-4565-83ca-dc43794aa83d]: BUSY
+[debug] [2020-01-12T16:27:50.314Z] [worker-~diagnostic~-64fd5f04-5097-41d2-97ac-aab474634502]: exited
+[debug] [2020-01-12T16:27:50.316Z] [worker-~diagnostic~-64fd5f04-5097-41d2-97ac-aab474634502]: FINISHED
+[debug] [2020-01-12T16:27:50.716Z] [runtime-status] [32706] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:27:50.719Z] [runtime-status] [32706] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:27:50.722Z] [runtime-status] [32706] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:27:50.723Z] [runtime-status] [32706] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:27:50.724Z] [runtime-status] [32706] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:27:50.881Z] [worker-~diagnostic~-c436cffe-c969-4565-83ca-dc43794aa83d]: IDLE
+[debug] [2020-01-12T16:30:20.088Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:30:20.163Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:30:20.456Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:30:20.456Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:30:21.457Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:30:21.457Z] [worker-~diagnostic~-c436cffe-c969-4565-83ca-dc43794aa83d]: FINISHING
+[debug] [2020-01-12T16:30:21.458Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:30:21.466Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:30:21.466Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:30:21.466Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:30:21.466Z] [worker-~diagnostic~-af204949-7408-4c33-957b-a935f22b5267]: Assigning socketPath: /tmp/fire_emu_689.sock
+[debug] [2020-01-12T16:30:21.466Z] [worker-~diagnostic~-af204949-7408-4c33-957b-a935f22b5267]: BUSY
+[debug] [2020-01-12T16:30:21.467Z] [worker-~diagnostic~-c436cffe-c969-4565-83ca-dc43794aa83d]: exited
+[debug] [2020-01-12T16:30:21.468Z] [worker-~diagnostic~-c436cffe-c969-4565-83ca-dc43794aa83d]: FINISHED
+[debug] [2020-01-12T16:30:21.835Z] [runtime-status] [689] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:30:21.838Z] [runtime-status] [689] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:30:21.840Z] [runtime-status] [689] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:30:21.841Z] [runtime-status] [689] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:30:21.843Z] [runtime-status] [689] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:30:21.989Z] [worker-~diagnostic~-af204949-7408-4c33-957b-a935f22b5267]: IDLE
+[debug] [2020-01-12T16:31:14.338Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:31:14.405Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:31:14.816Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:31:14.817Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:31:15.818Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:31:15.818Z] [worker-~diagnostic~-af204949-7408-4c33-957b-a935f22b5267]: FINISHING
+[debug] [2020-01-12T16:31:15.818Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:31:15.824Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:31:15.824Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:31:15.824Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:31:15.824Z] [worker-~diagnostic~-26285003-cb5a-4f2f-9307-80905dbe95af]: Assigning socketPath: /tmp/fire_emu_827.sock
+[debug] [2020-01-12T16:31:15.824Z] [worker-~diagnostic~-26285003-cb5a-4f2f-9307-80905dbe95af]: BUSY
+[debug] [2020-01-12T16:31:15.825Z] [worker-~diagnostic~-af204949-7408-4c33-957b-a935f22b5267]: exited
+[debug] [2020-01-12T16:31:15.825Z] [worker-~diagnostic~-af204949-7408-4c33-957b-a935f22b5267]: FINISHED
+[debug] [2020-01-12T16:31:16.204Z] [runtime-status] [827] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:31:16.207Z] [runtime-status] [827] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:31:16.210Z] [runtime-status] [827] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:31:16.211Z] [runtime-status] [827] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:31:16.212Z] [runtime-status] [827] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:31:16.387Z] [worker-~diagnostic~-26285003-cb5a-4f2f-9307-80905dbe95af]: IDLE
+[debug] [2020-01-12T16:33:58.939Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:33:59.006Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:33:59.330Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:33:59.330Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:34:00.331Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:34:00.331Z] [worker-~diagnostic~-26285003-cb5a-4f2f-9307-80905dbe95af]: FINISHING
+[debug] [2020-01-12T16:34:00.331Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:34:00.343Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:34:00.343Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:34:00.343Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:34:00.397Z] [worker-~diagnostic~-e5982442-36d2-48b1-b1c8-d5e26013ab20]: Assigning socketPath: /tmp/fire_emu_1686.sock
+[debug] [2020-01-12T16:34:00.397Z] [worker-~diagnostic~-e5982442-36d2-48b1-b1c8-d5e26013ab20]: BUSY
+[debug] [2020-01-12T16:34:00.398Z] [worker-~diagnostic~-26285003-cb5a-4f2f-9307-80905dbe95af]: exited
+[debug] [2020-01-12T16:34:00.398Z] [worker-~diagnostic~-26285003-cb5a-4f2f-9307-80905dbe95af]: FINISHED
+[debug] [2020-01-12T16:34:06.450Z] [runtime-status] [1686] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:34:06.454Z] [runtime-status] [1686] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:34:06.487Z] [runtime-status] [1686] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:34:06.488Z] [runtime-status] [1686] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:34:06.489Z] [runtime-status] [1686] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:34:08.584Z] [worker-~diagnostic~-e5982442-36d2-48b1-b1c8-d5e26013ab20]: IDLE
+[debug] [2020-01-12T16:36:17.468Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:36:17.525Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:36:17.758Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:36:17.759Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:36:18.760Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:36:18.760Z] [worker-~diagnostic~-e5982442-36d2-48b1-b1c8-d5e26013ab20]: FINISHING
+[debug] [2020-01-12T16:36:18.760Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:36:18.766Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:36:18.766Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:36:18.766Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:36:18.766Z] [worker-~diagnostic~-f3fa6681-c4f7-4d00-95dd-d12c15813814]: Assigning socketPath: /tmp/fire_emu_2389.sock
+[debug] [2020-01-12T16:36:18.766Z] [worker-~diagnostic~-f3fa6681-c4f7-4d00-95dd-d12c15813814]: BUSY
+[debug] [2020-01-12T16:36:18.767Z] [worker-~diagnostic~-e5982442-36d2-48b1-b1c8-d5e26013ab20]: exited
+[debug] [2020-01-12T16:36:18.767Z] [worker-~diagnostic~-e5982442-36d2-48b1-b1c8-d5e26013ab20]: FINISHED
+[debug] [2020-01-12T16:36:19.199Z] [runtime-status] [2389] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:36:19.201Z] [runtime-status] [2389] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:36:19.204Z] [runtime-status] [2389] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:36:19.205Z] [runtime-status] [2389] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:36:19.206Z] [runtime-status] [2389] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:36:19.379Z] [worker-~diagnostic~-f3fa6681-c4f7-4d00-95dd-d12c15813814]: IDLE
+[debug] [2020-01-12T16:39:25.304Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:39:25.364Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:39:25.799Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:39:25.800Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:39:26.800Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:39:26.800Z] [worker-~diagnostic~-f3fa6681-c4f7-4d00-95dd-d12c15813814]: FINISHING
+[debug] [2020-01-12T16:39:26.800Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:39:26.808Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:39:26.808Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:39:26.808Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:39:26.809Z] [worker-~diagnostic~-e6e251a1-5ffb-4092-9256-32fec3176ee3]: Assigning socketPath: /tmp/fire_emu_3222.sock
+[debug] [2020-01-12T16:39:26.809Z] [worker-~diagnostic~-e6e251a1-5ffb-4092-9256-32fec3176ee3]: BUSY
+[debug] [2020-01-12T16:39:26.810Z] [worker-~diagnostic~-f3fa6681-c4f7-4d00-95dd-d12c15813814]: exited
+[debug] [2020-01-12T16:39:26.810Z] [worker-~diagnostic~-f3fa6681-c4f7-4d00-95dd-d12c15813814]: FINISHED
+[debug] [2020-01-12T16:39:27.180Z] [runtime-status] [3222] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:39:27.183Z] [runtime-status] [3222] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:39:27.185Z] [runtime-status] [3222] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:39:27.186Z] [runtime-status] [3222] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:39:27.187Z] [runtime-status] [3222] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:39:27.355Z] [worker-~diagnostic~-e6e251a1-5ffb-4092-9256-32fec3176ee3]: IDLE
+[debug] [2020-01-12T16:41:04.481Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:41:04.937Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:41:04.937Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:41:05.938Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:41:05.938Z] [worker-~diagnostic~-e6e251a1-5ffb-4092-9256-32fec3176ee3]: FINISHING
+[debug] [2020-01-12T16:41:05.938Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:41:05.944Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:41:05.945Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:41:05.945Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:41:05.945Z] [worker-~diagnostic~-871a4c91-5df3-4273-b80f-8f53fb615bc7]: Assigning socketPath: /tmp/fire_emu_3603.sock
+[debug] [2020-01-12T16:41:05.945Z] [worker-~diagnostic~-871a4c91-5df3-4273-b80f-8f53fb615bc7]: BUSY
+[debug] [2020-01-12T16:41:05.946Z] [worker-~diagnostic~-e6e251a1-5ffb-4092-9256-32fec3176ee3]: exited
+[debug] [2020-01-12T16:41:05.946Z] [worker-~diagnostic~-e6e251a1-5ffb-4092-9256-32fec3176ee3]: FINISHED
+[debug] [2020-01-12T16:41:06.396Z] [runtime-status] [3603] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:41:06.400Z] [runtime-status] [3603] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:41:06.404Z] [runtime-status] [3603] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:41:06.405Z] [runtime-status] [3603] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:41:06.406Z] [runtime-status] [3603] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:41:06.569Z] [worker-~diagnostic~-871a4c91-5df3-4273-b80f-8f53fb615bc7]: IDLE
+[debug] [2020-01-12T16:45:33.858Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:45:33.940Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T16:45:34.355Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T16:45:34.356Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T16:45:35.357Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T16:45:35.357Z] [worker-~diagnostic~-871a4c91-5df3-4273-b80f-8f53fb615bc7]: FINISHING
+[debug] [2020-01-12T16:45:35.358Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:45:35.367Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T16:45:35.367Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T16:45:35.368Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T16:45:35.368Z] [worker-~diagnostic~-a46cf5de-4e7e-45f5-bae4-06f368940c5e]: Assigning socketPath: /tmp/fire_emu_4669.sock
+[debug] [2020-01-12T16:45:35.368Z] [worker-~diagnostic~-a46cf5de-4e7e-45f5-bae4-06f368940c5e]: BUSY
+[debug] [2020-01-12T16:45:35.370Z] [worker-~diagnostic~-871a4c91-5df3-4273-b80f-8f53fb615bc7]: exited
+[debug] [2020-01-12T16:45:35.370Z] [worker-~diagnostic~-871a4c91-5df3-4273-b80f-8f53fb615bc7]: FINISHED
+[debug] [2020-01-12T16:45:35.730Z] [runtime-status] [4669] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:45:35.733Z] [runtime-status] [4669] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:45:35.736Z] [runtime-status] [4669] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:45:35.737Z] [runtime-status] [4669] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:45:35.738Z] [runtime-status] [4669] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:45:35.898Z] [worker-~diagnostic~-a46cf5de-4e7e-45f5-bae4-06f368940c5e]: IDLE
+[debug] [2020-01-12T16:47:55.641Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-01-12T16:47:55.642Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-01-12T16:47:55.642Z] Accepted request GET /buyusedshopify/us-central1/buyUsedServer/auth/callback --> buyUsedServer
+[debug] [2020-01-12T16:47:55.642Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T16:47:55.689Z] [worker-pool] addWorker(buyUsedServer)
+[debug] [2020-01-12T16:47:55.689Z] [worker-pool] Adding worker with key buyUsedServer, total=1
+[debug] [2020-01-12T16:47:55.689Z] [worker-pool] submitWork(triggerId=buyUsedServer)
+[debug] [2020-01-12T16:47:55.690Z] [worker-buyUsedServer-d7cd0e90-ff8a-4205-ae3b-c1c51a469fef]: Assigning socketPath: /tmp/fire_emu_5839.sock
+[debug] [2020-01-12T16:47:55.690Z] [worker-buyUsedServer-d7cd0e90-ff8a-4205-ae3b-c1c51a469fef]: BUSY
+[debug] [2020-01-12T16:47:55.691Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2020-01-12T16:47:55.691Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-01-12T16:47:55.691Z] Accepted request GET /buyusedshopify/us-central1/buyUsedServer/ --> buyUsedServer
+[debug] [2020-01-12T16:47:55.698Z] [worker-pool] addWorker(buyUsedServer)
+[debug] [2020-01-12T16:47:55.698Z] [worker-pool] Adding worker with key buyUsedServer, total=2
+[debug] [2020-01-12T16:47:55.698Z] [worker-pool] submitWork(triggerId=buyUsedServer)
+[debug] [2020-01-12T16:47:55.699Z] [worker-buyUsedServer-8c4a8ada-4456-4433-890f-ad287ee76d70]: Assigning socketPath: /tmp/fire_emu_5840.sock
+[debug] [2020-01-12T16:47:55.699Z] [worker-buyUsedServer-8c4a8ada-4456-4433-890f-ad287ee76d70]: BUSY
+[debug] [2020-01-12T16:47:59.723Z] [runtime-status] [5839] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:47:59.723Z] [runtime-status] [5840] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T16:47:59.726Z] [runtime-status] [5840] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:47:59.726Z] [runtime-status] [5839] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T16:47:59.749Z] [runtime-status] [5840] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:47:59.749Z] [runtime-status] [5839] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T16:47:59.750Z] [runtime-status] [5839] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:47:59.751Z] [runtime-status] [5840] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:47:59.751Z] [runtime-status] [5840] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:47:59.752Z] [runtime-status] [5839] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T16:48:01.291Z] [runtime-status] [5839] Trigger "buyUsedServer" has been found, beginning invocation!
+[debug] [2020-01-12T16:48:01.291Z] [runtime-status] [5840] Trigger "buyUsedServer" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "buyUsedServer"
+[debug] [2020-01-12T16:48:01.292Z] [runtime-status] [5840] triggerDefinition {"httpsTrigger":{},"name":"buyUsedServer","entryPoint":"buyUsedServer"}
+[debug] [2020-01-12T16:48:01.292Z] [runtime-status] [5840] Running buyUsedServer in mode HTTPS
+[info] i  functions: Beginning execution of "buyUsedServer"
+[debug] [2020-01-12T16:48:01.292Z] [runtime-status] [5839] triggerDefinition {"httpsTrigger":{},"name":"buyUsedServer","entryPoint":"buyUsedServer"}
+[debug] [2020-01-12T16:48:01.292Z] [runtime-status] [5839] Running buyUsedServer in mode HTTPS
+[debug] [2020-01-12T16:48:01.298Z] [runtime-status] [5840] Attempting to listen to socketPath: /tmp/fire_emu_5840.sock
+[debug] [2020-01-12T16:48:01.298Z] [runtime-status] [5839] Attempting to listen to socketPath: /tmp/fire_emu_5839.sock
+[debug] [2020-01-12T16:48:01.302Z] [functions] Runtime ready! Sending request!
+[debug] [2020-01-12T16:48:01.303Z] [functions] Runtime ready! Sending request!
+[debug] [2020-01-12T16:48:01.369Z] [runtime-status] [5839] Ephemeral server handling GET request
+[debug] [2020-01-12T16:48:01.371Z] [runtime-status] [5840] Ephemeral server handling GET request
+[debug] [2020-01-12T16:48:01.412Z] [runtime-status] [5839] Ephemeral server survived.
+[debug] [2020-01-12T16:48:01.414Z] [runtime-status] [5840] Ephemeral server survived.
+[info] i  functions: Finished "buyUsedServer" in ~1s
+[debug] [2020-01-12T16:48:01.416Z] [worker-buyUsedServer-d7cd0e90-ff8a-4205-ae3b-c1c51a469fef]: IDLE
+[debug] [2020-01-12T16:48:01.416Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[info] i  functions: Finished "buyUsedServer" in ~1s
+[debug] [2020-01-12T16:48:01.418Z] [worker-buyUsedServer-8c4a8ada-4456-4433-890f-ad287ee76d70]: IDLE
+[debug] [2020-01-12T16:48:01.418Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-01-12T17:11:28.502Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:11:28.648Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:11:29.648Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T17:11:29.649Z] [worker-~diagnostic~-a46cf5de-4e7e-45f5-bae4-06f368940c5e]: FINISHING
+[debug] [2020-01-12T17:11:29.649Z] [worker-pool] Shutting down IDLE worker (buyUsedServer)
+[debug] [2020-01-12T17:11:29.649Z] [worker-buyUsedServer-d7cd0e90-ff8a-4205-ae3b-c1c51a469fef]: FINISHING
+[debug] [2020-01-12T17:11:29.649Z] [worker-pool] Shutting down IDLE worker (buyUsedServer)
+[debug] [2020-01-12T17:11:29.650Z] [worker-buyUsedServer-8c4a8ada-4456-4433-890f-ad287ee76d70]: FINISHING
+[debug] [2020-01-12T17:11:29.661Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:11:29.661Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:11:29.661Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:11:29.661Z] [worker-~diagnostic~-591c62d6-6e6f-4a61-a96f-e084055de64e]: Assigning socketPath: /tmp/fire_emu_11801.sock
+[debug] [2020-01-12T17:11:29.661Z] [worker-~diagnostic~-591c62d6-6e6f-4a61-a96f-e084055de64e]: BUSY
+[debug] [2020-01-12T17:11:29.662Z] [worker-~diagnostic~-a46cf5de-4e7e-45f5-bae4-06f368940c5e]: exited
+[debug] [2020-01-12T17:11:29.663Z] [worker-~diagnostic~-a46cf5de-4e7e-45f5-bae4-06f368940c5e]: FINISHED
+[debug] [2020-01-12T17:11:29.663Z] [worker-buyUsedServer-d7cd0e90-ff8a-4205-ae3b-c1c51a469fef]: exited
+[debug] [2020-01-12T17:11:29.663Z] [worker-buyUsedServer-d7cd0e90-ff8a-4205-ae3b-c1c51a469fef]: FINISHED
+[debug] [2020-01-12T17:11:29.663Z] [worker-buyUsedServer-8c4a8ada-4456-4433-890f-ad287ee76d70]: exited
+[debug] [2020-01-12T17:11:29.663Z] [worker-buyUsedServer-8c4a8ada-4456-4433-890f-ad287ee76d70]: FINISHED
+[debug] [2020-01-12T17:11:29.810Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T17:11:29.815Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T17:11:30.815Z] [worker-pool] Marking BUSY worker to finish (~diagnostic~)
+[debug] [2020-01-12T17:11:30.816Z] [worker-~diagnostic~-591c62d6-6e6f-4a61-a96f-e084055de64e]: FINISHING
+[debug] [2020-01-12T17:11:30.816Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T17:11:30.816Z] [worker-pool] Cleaned up workers for buyUsedServer: 2 --> 0
+[debug] [2020-01-12T17:11:30.820Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:11:30.820Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:11:30.820Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:11:30.821Z] [worker-~diagnostic~-1f34ee22-0745-425e-ba27-fbfc4f911c4e]: Assigning socketPath: /tmp/fire_emu_11814.sock
+[debug] [2020-01-12T17:11:30.821Z] [worker-~diagnostic~-1f34ee22-0745-425e-ba27-fbfc4f911c4e]: BUSY
+[debug] [2020-01-12T17:11:40.430Z] [runtime-status] [11801] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:11:40.430Z] [runtime-status] [11814] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:11:40.434Z] [runtime-status] [11814] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:11:40.434Z] [runtime-status] [11801] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:11:40.487Z] [runtime-status] [11801] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:11:40.488Z] [runtime-status] [11814] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:11:40.489Z] [runtime-status] [11801] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:11:40.489Z] [runtime-status] [11814] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:11:40.491Z] [runtime-status] [11801] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:11:40.491Z] [runtime-status] [11814] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:11:48.055Z] [worker-~diagnostic~-1f34ee22-0745-425e-ba27-fbfc4f911c4e]: IDLE
+[debug] [2020-01-12T17:11:48.055Z] [worker-~diagnostic~-591c62d6-6e6f-4a61-a96f-e084055de64e]: IDLE --> FINISHING
+[debug] [2020-01-12T17:11:48.061Z] [worker-~diagnostic~-591c62d6-6e6f-4a61-a96f-e084055de64e]: exited
+[debug] [2020-01-12T17:11:48.061Z] [worker-~diagnostic~-591c62d6-6e6f-4a61-a96f-e084055de64e]: FINISHED
+[debug] [2020-01-12T17:16:46.471Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:16:47.855Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T17:16:47.855Z] [worker-~diagnostic~-1f34ee22-0745-425e-ba27-fbfc4f911c4e]: FINISHING
+[debug] [2020-01-12T17:16:48.021Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T17:16:51.928Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:16:51.929Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:16:51.929Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:16:52.584Z] [worker-~diagnostic~-a2da27cb-a5b3-4100-9f82-584054c94eac]: Assigning socketPath: /tmp/fire_emu_13100.sock
+[debug] [2020-01-12T17:16:52.584Z] [worker-~diagnostic~-a2da27cb-a5b3-4100-9f82-584054c94eac]: BUSY
+[debug] [2020-01-12T17:16:52.585Z] [worker-~diagnostic~-1f34ee22-0745-425e-ba27-fbfc4f911c4e]: exited
+[debug] [2020-01-12T17:16:52.585Z] [worker-~diagnostic~-1f34ee22-0745-425e-ba27-fbfc4f911c4e]: FINISHED
+[debug] [2020-01-12T17:17:01.957Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T17:17:01.957Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T17:17:02.957Z] [worker-pool] Marking BUSY worker to finish (~diagnostic~)
+[debug] [2020-01-12T17:17:02.957Z] [worker-~diagnostic~-a2da27cb-a5b3-4100-9f82-584054c94eac]: FINISHING
+[debug] [2020-01-12T17:17:02.957Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T17:17:02.966Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:17:02.967Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:17:02.967Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:17:02.967Z] [worker-~diagnostic~-8a542d91-fd91-42c9-a432-5123962a74b9]: Assigning socketPath: /tmp/fire_emu_13144.sock
+[debug] [2020-01-12T17:17:02.967Z] [worker-~diagnostic~-8a542d91-fd91-42c9-a432-5123962a74b9]: BUSY
+[debug] [2020-01-12T17:18:10.003Z] [runtime-status] [13144] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:18:10.004Z] [runtime-status] [13100] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:18:10.006Z] [runtime-status] [13144] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:18:10.007Z] [runtime-status] [13100] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:18:10.263Z] [runtime-status] [13100] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:18:10.263Z] [runtime-status] [13144] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:18:10.663Z] [runtime-status] [13100] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:18:10.663Z] [runtime-status] [13144] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:18:10.665Z] [runtime-status] [13100] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:18:10.665Z] [runtime-status] [13144] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:18:36.237Z] [worker-~diagnostic~-8a542d91-fd91-42c9-a432-5123962a74b9]: IDLE
+[debug] [2020-01-12T17:18:36.237Z] [worker-~diagnostic~-a2da27cb-a5b3-4100-9f82-584054c94eac]: IDLE --> FINISHING
+[debug] [2020-01-12T17:18:36.241Z] [worker-~diagnostic~-a2da27cb-a5b3-4100-9f82-584054c94eac]: exited
+[debug] [2020-01-12T17:18:36.241Z] [worker-~diagnostic~-a2da27cb-a5b3-4100-9f82-584054c94eac]: FINISHED
+[debug] [2020-01-12T17:18:57.024Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:18:57.236Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:18:58.065Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T17:18:58.065Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T17:18:59.066Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T17:18:59.066Z] [worker-~diagnostic~-8a542d91-fd91-42c9-a432-5123962a74b9]: FINISHING
+[debug] [2020-01-12T17:18:59.067Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T17:18:59.076Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:18:59.076Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:18:59.076Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:18:59.077Z] [worker-~diagnostic~-9d8157ec-68bd-42b7-8ca6-81c5c87f0982]: Assigning socketPath: /tmp/fire_emu_13421.sock
+[debug] [2020-01-12T17:18:59.077Z] [worker-~diagnostic~-9d8157ec-68bd-42b7-8ca6-81c5c87f0982]: BUSY
+[debug] [2020-01-12T17:18:59.078Z] [worker-~diagnostic~-8a542d91-fd91-42c9-a432-5123962a74b9]: exited
+[debug] [2020-01-12T17:18:59.078Z] [worker-~diagnostic~-8a542d91-fd91-42c9-a432-5123962a74b9]: FINISHED
+[debug] [2020-01-12T17:18:59.583Z] [runtime-status] [13421] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:18:59.586Z] [runtime-status] [13421] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:18:59.589Z] [runtime-status] [13421] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:18:59.590Z] [runtime-status] [13421] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:18:59.591Z] [runtime-status] [13421] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:18:59.736Z] [worker-~diagnostic~-9d8157ec-68bd-42b7-8ca6-81c5c87f0982]: IDLE
+[debug] [2020-01-12T17:28:59.401Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:29:00.401Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T17:29:00.402Z] [worker-~diagnostic~-9d8157ec-68bd-42b7-8ca6-81c5c87f0982]: FINISHING
+[debug] [2020-01-12T17:29:00.402Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T17:29:01.610Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:29:01.610Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:29:01.610Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:29:01.610Z] [worker-~diagnostic~-b4bad4ed-e4ee-4f06-bda6-adf9e742720c]: Assigning socketPath: /tmp/fire_emu_15515.sock
+[debug] [2020-01-12T17:29:01.610Z] [worker-~diagnostic~-b4bad4ed-e4ee-4f06-bda6-adf9e742720c]: BUSY
+[debug] [2020-01-12T17:29:01.612Z] [worker-~diagnostic~-9d8157ec-68bd-42b7-8ca6-81c5c87f0982]: exited
+[debug] [2020-01-12T17:29:01.612Z] [worker-~diagnostic~-9d8157ec-68bd-42b7-8ca6-81c5c87f0982]: FINISHED
+[debug] [2020-01-12T17:29:11.022Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T17:29:11.022Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T17:29:12.023Z] [worker-pool] Marking BUSY worker to finish (~diagnostic~)
+[debug] [2020-01-12T17:29:12.024Z] [worker-~diagnostic~-b4bad4ed-e4ee-4f06-bda6-adf9e742720c]: FINISHING
+[debug] [2020-01-12T17:29:12.024Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T17:29:12.029Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:29:12.029Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:29:12.030Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:29:12.030Z] [worker-~diagnostic~-777e0127-b4ba-4c29-874f-4e4fdb21ec18]: Assigning socketPath: /tmp/fire_emu_15578.sock
+[debug] [2020-01-12T17:29:12.030Z] [worker-~diagnostic~-777e0127-b4ba-4c29-874f-4e4fdb21ec18]: BUSY
+[debug] [2020-01-12T17:29:33.933Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:29:34.422Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T17:29:34.422Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T17:29:35.423Z] [worker-pool] Marking BUSY worker to finish (~diagnostic~)
+[debug] [2020-01-12T17:29:35.423Z] [worker-~diagnostic~-777e0127-b4ba-4c29-874f-4e4fdb21ec18]: FINISHING
+[debug] [2020-01-12T17:29:35.429Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:29:35.429Z] [worker-pool] Adding worker with key ~diagnostic~, total=3
+[debug] [2020-01-12T17:29:35.429Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:29:35.429Z] [worker-~diagnostic~-ba428c5c-bb47-4d5d-85d0-6061422c0b6d]: Assigning socketPath: /tmp/fire_emu_15666.sock
+[debug] [2020-01-12T17:29:35.430Z] [worker-~diagnostic~-ba428c5c-bb47-4d5d-85d0-6061422c0b6d]: BUSY
+[debug] [2020-01-12T17:29:42.510Z] [runtime-status] [15578] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:29:42.511Z] [runtime-status] [15666] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:29:42.511Z] [runtime-status] [15515] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:29:42.514Z] [runtime-status] [15578] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:29:42.514Z] [runtime-status] [15666] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:29:42.514Z] [runtime-status] [15515] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:29:42.581Z] [runtime-status] [15515] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:29:42.581Z] [runtime-status] [15578] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:29:42.581Z] [runtime-status] [15666] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:29:42.618Z] [runtime-status] [15578] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:29:42.618Z] [runtime-status] [15666] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:29:42.618Z] [runtime-status] [15515] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:29:42.619Z] [runtime-status] [15578] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:29:42.620Z] [runtime-status] [15515] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:29:42.620Z] [runtime-status] [15666] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:29:53.776Z] [worker-~diagnostic~-ba428c5c-bb47-4d5d-85d0-6061422c0b6d]: IDLE
+[debug] [2020-01-12T17:29:53.777Z] [worker-~diagnostic~-777e0127-b4ba-4c29-874f-4e4fdb21ec18]: IDLE --> FINISHING
+[debug] [2020-01-12T17:29:53.777Z] [worker-~diagnostic~-b4bad4ed-e4ee-4f06-bda6-adf9e742720c]: IDLE --> FINISHING
+[debug] [2020-01-12T17:29:53.783Z] [worker-~diagnostic~-b4bad4ed-e4ee-4f06-bda6-adf9e742720c]: exited
+[debug] [2020-01-12T17:29:53.784Z] [worker-~diagnostic~-b4bad4ed-e4ee-4f06-bda6-adf9e742720c]: FINISHED
+[debug] [2020-01-12T17:29:53.784Z] [worker-~diagnostic~-777e0127-b4ba-4c29-874f-4e4fdb21ec18]: exited
+[debug] [2020-01-12T17:29:53.784Z] [worker-~diagnostic~-777e0127-b4ba-4c29-874f-4e4fdb21ec18]: FINISHED
+[debug] [2020-01-12T17:52:08.680Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:52:08.743Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:52:09.156Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T17:52:09.157Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T17:52:10.157Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T17:52:10.157Z] [worker-~diagnostic~-ba428c5c-bb47-4d5d-85d0-6061422c0b6d]: FINISHING
+[debug] [2020-01-12T17:52:10.157Z] [worker-pool] Cleaned up workers for ~diagnostic~: 3 --> 1
+[debug] [2020-01-12T17:52:10.181Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:52:10.181Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:52:10.181Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:52:10.182Z] [worker-~diagnostic~-b36299b2-0fa5-4375-8382-ca851d62b082]: Assigning socketPath: /tmp/fire_emu_20745.sock
+[debug] [2020-01-12T17:52:10.182Z] [worker-~diagnostic~-b36299b2-0fa5-4375-8382-ca851d62b082]: BUSY
+[debug] [2020-01-12T17:52:10.182Z] [worker-~diagnostic~-ba428c5c-bb47-4d5d-85d0-6061422c0b6d]: exited
+[debug] [2020-01-12T17:52:10.182Z] [worker-~diagnostic~-ba428c5c-bb47-4d5d-85d0-6061422c0b6d]: FINISHED
+[debug] [2020-01-12T17:52:12.917Z] [runtime-status] [20745] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:52:12.921Z] [runtime-status] [20745] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:52:12.942Z] [runtime-status] [20745] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:52:12.943Z] [runtime-status] [20745] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:52:12.944Z] [runtime-status] [20745] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:52:15.051Z] [worker-~diagnostic~-b36299b2-0fa5-4375-8382-ca851d62b082]: IDLE
+[debug] [2020-01-12T17:54:12.146Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:54:12.243Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:54:12.571Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T17:54:12.571Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T17:54:13.571Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T17:54:13.572Z] [worker-~diagnostic~-b36299b2-0fa5-4375-8382-ca851d62b082]: FINISHING
+[debug] [2020-01-12T17:54:13.572Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T17:54:13.580Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:54:13.580Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:54:13.580Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:54:13.580Z] [worker-~diagnostic~-62aa7b74-7223-47eb-8a3c-0a4a6a015162]: Assigning socketPath: /tmp/fire_emu_21126.sock
+[debug] [2020-01-12T17:54:13.580Z] [worker-~diagnostic~-62aa7b74-7223-47eb-8a3c-0a4a6a015162]: BUSY
+[debug] [2020-01-12T17:54:13.581Z] [worker-~diagnostic~-b36299b2-0fa5-4375-8382-ca851d62b082]: exited
+[debug] [2020-01-12T17:54:13.581Z] [worker-~diagnostic~-b36299b2-0fa5-4375-8382-ca851d62b082]: FINISHED
+[debug] [2020-01-12T17:54:13.945Z] [runtime-status] [21126] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:54:13.947Z] [runtime-status] [21126] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:54:13.950Z] [runtime-status] [21126] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:54:13.951Z] [runtime-status] [21126] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:54:13.952Z] [runtime-status] [21126] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:54:14.094Z] [worker-~diagnostic~-62aa7b74-7223-47eb-8a3c-0a4a6a015162]: IDLE
+[debug] [2020-01-12T17:55:50.211Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T17:55:50.655Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T17:55:50.655Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T17:55:51.655Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-12T17:55:51.656Z] [worker-~diagnostic~-62aa7b74-7223-47eb-8a3c-0a4a6a015162]: FINISHING
+[debug] [2020-01-12T17:55:51.657Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-12T17:55:51.665Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-12T17:55:51.666Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-12T17:55:51.666Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-12T17:55:51.666Z] [worker-~diagnostic~-315ffc70-4826-438b-9afd-55b0c2edf80a]: Assigning socketPath: /tmp/fire_emu_21445.sock
+[debug] [2020-01-12T17:55:51.666Z] [worker-~diagnostic~-315ffc70-4826-438b-9afd-55b0c2edf80a]: BUSY
+[debug] [2020-01-12T17:55:51.668Z] [worker-~diagnostic~-62aa7b74-7223-47eb-8a3c-0a4a6a015162]: exited
+[debug] [2020-01-12T17:55:51.668Z] [worker-~diagnostic~-62aa7b74-7223-47eb-8a3c-0a4a6a015162]: FINISHED
+[debug] [2020-01-12T17:55:52.187Z] [runtime-status] [21445] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"10.16.3"}
+[debug] [2020-01-12T17:55:52.190Z] [runtime-status] [21445] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T17:55:52.193Z] [runtime-status] [21445] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T17:55:52.194Z] [runtime-status] [21445] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:55:52.195Z] [runtime-status] [21445] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T17:55:52.402Z] [worker-~diagnostic~-315ffc70-4826-438b-9afd-55b0c2edf80a]: IDLE
+[debug] [2020-01-12T19:17:38.486Z] ----------------------------------------------------------------------
+[debug] [2020-01-12T19:17:38.489Z] Command:       /home/owner/.nvm/versions/node/v12.4.0/bin/node /home/owner/.nvm/versions/node/v12.4.0/bin/firebase serve --only functions
+[debug] [2020-01-12T19:17:38.489Z] CLI Version:   7.8.1
+[debug] [2020-01-12T19:17:38.489Z] Platform:      linux
+[debug] [2020-01-12T19:17:38.489Z] Node Version:  v12.4.0
+[debug] [2020-01-12T19:17:38.516Z] Time:          Mon Jan 13 2020 02:17:38 GMT+0700 (Indochina Time)
+[debug] [2020-01-12T19:17:38.517Z] ----------------------------------------------------------------------
+[debug] [2020-01-12T19:17:38.517Z] 
+[debug] [2020-01-12T19:17:38.617Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-12T19:17:38.617Z] > authorizing via signed-in user
+[debug] [2020-01-12T19:17:38.618Z] [iam] checking project buyusedshopify for permissions ["firebase.projects.get"]
+[debug] [2020-01-12T19:17:38.620Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-12T19:17:38.620Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-12T19:17:39.005Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-12T19:17:39.058Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/buyusedshopify:testIamPermissions  
+
+[debug] [2020-01-12T19:17:40.391Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-12T19:17:40.393Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/buyusedshopify  
+ 
+[debug] [2020-01-12T19:17:40.967Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/home/owner/PhpstormProjects/shopify/buyUsedServer/functions" for Cloud Functions...
+[debug] [2020-01-12T19:17:41.273Z] [worker-~diagnostic~-6ef7f69b-3a2c-426d-908e-a871a617f173]: Assigning socketPath: /tmp/fire_emu_6575.sock
+[debug] [2020-01-12T19:17:41.273Z] [worker-~diagnostic~-6ef7f69b-3a2c-426d-908e-a871a617f173]: BUSY
+[debug] [2020-01-12T19:17:41.600Z] [runtime-status] [6575] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T19:17:41.601Z] [runtime-status] [6575] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T19:17:41.605Z] [runtime-status] [6575] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T19:17:41.611Z] [runtime-status] [6575] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T19:17:41.612Z] [runtime-status] [6575] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[info] ✔  functions[buyUsedServer]: http function initialized (http://localhost:5000/buyusedshopify/us-central1/buyUsedServer).
+[debug] [2020-01-12T19:17:42.965Z] [worker-~diagnostic~-6ef7f69b-3a2c-426d-908e-a871a617f173]: exited
+[debug] [2020-01-12T19:17:42.965Z] [worker-~diagnostic~-6ef7f69b-3a2c-426d-908e-a871a617f173]: FINISHED
+[debug] [2020-01-12T19:42:16.274Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T19:42:16.335Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T19:42:16.689Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T19:42:16.697Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T19:42:17.706Z] [worker-~diagnostic~-3054e0b4-0d9a-49c9-8600-92107de6c208]: Assigning socketPath: /tmp/fire_emu_12033.sock
+[debug] [2020-01-12T19:42:17.707Z] [worker-~diagnostic~-3054e0b4-0d9a-49c9-8600-92107de6c208]: BUSY
+[debug] [2020-01-12T19:42:17.989Z] [runtime-status] [12033] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T19:42:17.992Z] [runtime-status] [12033] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T19:42:17.995Z] [runtime-status] [12033] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T19:42:17.996Z] [runtime-status] [12033] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T19:42:17.997Z] [runtime-status] [12033] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T19:42:18.134Z] [worker-~diagnostic~-3054e0b4-0d9a-49c9-8600-92107de6c208]: exited
+[debug] [2020-01-12T19:42:18.134Z] [worker-~diagnostic~-3054e0b4-0d9a-49c9-8600-92107de6c208]: FINISHED
+[debug] [2020-01-12T19:47:54.642Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T19:47:54.876Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T19:47:55.170Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T19:47:55.171Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T19:47:56.179Z] [worker-~diagnostic~-2f302c16-2ae2-4cca-bd90-dd0cf08d863e]: Assigning socketPath: /tmp/fire_emu_12846.sock
+[debug] [2020-01-12T19:47:56.179Z] [worker-~diagnostic~-2f302c16-2ae2-4cca-bd90-dd0cf08d863e]: BUSY
+[debug] [2020-01-12T19:47:56.614Z] [runtime-status] [12846] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T19:47:56.616Z] [runtime-status] [12846] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T19:47:56.620Z] [runtime-status] [12846] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T19:47:56.621Z] [runtime-status] [12846] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T19:47:56.621Z] [runtime-status] [12846] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T19:47:56.775Z] [worker-~diagnostic~-2f302c16-2ae2-4cca-bd90-dd0cf08d863e]: exited
+[debug] [2020-01-12T19:47:56.776Z] [worker-~diagnostic~-2f302c16-2ae2-4cca-bd90-dd0cf08d863e]: FINISHED
+[debug] [2020-01-12T20:21:49.680Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T20:21:50.143Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T20:21:50.220Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T20:21:50.223Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T20:21:51.229Z] [worker-~diagnostic~-6bda6c15-1dc2-43a4-8a69-f1a66d8de1d0]: Assigning socketPath: /tmp/fire_emu_19429.sock
+[debug] [2020-01-12T20:21:51.230Z] [worker-~diagnostic~-6bda6c15-1dc2-43a4-8a69-f1a66d8de1d0]: BUSY
+[debug] [2020-01-12T20:21:51.577Z] [runtime-status] [19429] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T20:21:51.579Z] [runtime-status] [19429] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T20:21:51.583Z] [runtime-status] [19429] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T20:21:51.584Z] [runtime-status] [19429] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T20:21:51.585Z] [runtime-status] [19429] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T20:21:51.725Z] [worker-~diagnostic~-6bda6c15-1dc2-43a4-8a69-f1a66d8de1d0]: exited
+[debug] [2020-01-12T20:21:51.725Z] [worker-~diagnostic~-6bda6c15-1dc2-43a4-8a69-f1a66d8de1d0]: FINISHED
+[debug] [2020-01-12T20:54:05.980Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T20:54:06.479Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T20:54:06.480Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T20:54:07.487Z] [worker-~diagnostic~-461194d0-6d47-4519-92c0-0a1afb367ebf]: Assigning socketPath: /tmp/fire_emu_26081.sock
+[debug] [2020-01-12T20:54:07.487Z] [worker-~diagnostic~-461194d0-6d47-4519-92c0-0a1afb367ebf]: BUSY
+[debug] [2020-01-12T20:54:07.795Z] [runtime-status] [26081] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T20:54:07.798Z] [runtime-status] [26081] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T20:54:07.803Z] [runtime-status] [26081] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T20:54:07.805Z] [runtime-status] [26081] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T20:54:07.806Z] [runtime-status] [26081] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T20:54:07.950Z] [worker-~diagnostic~-461194d0-6d47-4519-92c0-0a1afb367ebf]: exited
+[debug] [2020-01-12T20:54:07.950Z] [worker-~diagnostic~-461194d0-6d47-4519-92c0-0a1afb367ebf]: FINISHED
+[debug] [2020-01-12T20:56:56.191Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T20:56:56.256Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T20:56:56.689Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T20:56:56.690Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T20:56:57.695Z] [worker-~diagnostic~-baf4624a-5651-4779-abe8-f4bf49ca50a7]: Assigning socketPath: /tmp/fire_emu_26568.sock
+[debug] [2020-01-12T20:56:57.695Z] [worker-~diagnostic~-baf4624a-5651-4779-abe8-f4bf49ca50a7]: BUSY
+[debug] [2020-01-12T20:56:58.036Z] [runtime-status] [26568] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T20:56:58.039Z] [runtime-status] [26568] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T20:56:58.042Z] [runtime-status] [26568] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T20:56:58.044Z] [runtime-status] [26568] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T20:56:58.045Z] [runtime-status] [26568] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T20:56:58.193Z] [worker-~diagnostic~-baf4624a-5651-4779-abe8-f4bf49ca50a7]: exited
+[debug] [2020-01-12T20:56:58.194Z] [worker-~diagnostic~-baf4624a-5651-4779-abe8-f4bf49ca50a7]: FINISHED
+[debug] [2020-01-12T20:58:44.381Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T20:58:44.440Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T20:58:44.857Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T20:58:44.858Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T20:58:45.862Z] [worker-~diagnostic~-b7f2ea0c-628c-46f5-908c-0bc2fad8570d]: Assigning socketPath: /tmp/fire_emu_26849.sock
+[debug] [2020-01-12T20:58:45.862Z] [worker-~diagnostic~-b7f2ea0c-628c-46f5-908c-0bc2fad8570d]: BUSY
+[debug] [2020-01-12T20:58:46.200Z] [runtime-status] [26849] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T20:58:46.203Z] [runtime-status] [26849] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T20:58:46.207Z] [runtime-status] [26849] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T20:58:46.208Z] [runtime-status] [26849] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T20:58:46.210Z] [runtime-status] [26849] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T20:58:46.355Z] [worker-~diagnostic~-b7f2ea0c-628c-46f5-908c-0bc2fad8570d]: exited
+[debug] [2020-01-12T20:58:46.356Z] [worker-~diagnostic~-b7f2ea0c-628c-46f5-908c-0bc2fad8570d]: FINISHED
+[debug] [2020-01-12T21:05:11.675Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T21:05:11.740Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T21:05:12.269Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T21:05:12.270Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T21:05:13.275Z] [worker-~diagnostic~-b8004510-cd8a-486a-b033-01813323e66f]: Assigning socketPath: /tmp/fire_emu_28277.sock
+[debug] [2020-01-12T21:05:13.276Z] [worker-~diagnostic~-b8004510-cd8a-486a-b033-01813323e66f]: BUSY
+[debug] [2020-01-12T21:05:13.640Z] [runtime-status] [28277] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T21:05:13.643Z] [runtime-status] [28277] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T21:05:13.647Z] [runtime-status] [28277] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T21:05:13.648Z] [runtime-status] [28277] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T21:05:13.649Z] [runtime-status] [28277] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T21:05:13.798Z] [worker-~diagnostic~-b8004510-cd8a-486a-b033-01813323e66f]: exited
+[debug] [2020-01-12T21:05:13.798Z] [worker-~diagnostic~-b8004510-cd8a-486a-b033-01813323e66f]: FINISHED
+[debug] [2020-01-12T21:15:25.383Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T21:15:25.450Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T21:15:25.767Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T21:15:25.767Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T21:15:26.774Z] [worker-~diagnostic~-69ae0257-16e7-4e2f-84c0-d2fe286d7f88]: Assigning socketPath: /tmp/fire_emu_30412.sock
+[debug] [2020-01-12T21:15:26.774Z] [worker-~diagnostic~-69ae0257-16e7-4e2f-84c0-d2fe286d7f88]: BUSY
+[debug] [2020-01-12T21:15:27.060Z] [runtime-status] [30412] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T21:15:27.062Z] [runtime-status] [30412] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T21:15:27.065Z] [runtime-status] [30412] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T21:15:27.066Z] [runtime-status] [30412] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T21:15:27.067Z] [runtime-status] [30412] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T21:15:27.204Z] [worker-~diagnostic~-69ae0257-16e7-4e2f-84c0-d2fe286d7f88]: exited
+[debug] [2020-01-12T21:15:27.204Z] [worker-~diagnostic~-69ae0257-16e7-4e2f-84c0-d2fe286d7f88]: FINISHED
+[debug] [2020-01-12T21:17:04.593Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T21:17:04.905Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T21:17:04.906Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T21:17:05.914Z] [worker-~diagnostic~-8c8f9917-5692-43ee-b39a-46caa24f2eca]: Assigning socketPath: /tmp/fire_emu_30652.sock
+[debug] [2020-01-12T21:17:05.914Z] [worker-~diagnostic~-8c8f9917-5692-43ee-b39a-46caa24f2eca]: BUSY
+[debug] [2020-01-12T21:17:06.446Z] [runtime-status] [30652] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T21:17:06.449Z] [runtime-status] [30652] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T21:17:06.452Z] [runtime-status] [30652] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T21:17:06.453Z] [runtime-status] [30652] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T21:17:06.454Z] [runtime-status] [30652] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T21:17:06.592Z] [worker-~diagnostic~-8c8f9917-5692-43ee-b39a-46caa24f2eca]: exited
+[debug] [2020-01-12T21:17:06.592Z] [worker-~diagnostic~-8c8f9917-5692-43ee-b39a-46caa24f2eca]: FINISHED
+[debug] [2020-01-12T21:18:08.067Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T21:18:08.130Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T21:18:08.490Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T21:18:08.491Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T21:18:09.498Z] [worker-~diagnostic~-b0955a43-cffc-4766-9e80-81eee9ce078a]: Assigning socketPath: /tmp/fire_emu_30834.sock
+[debug] [2020-01-12T21:18:09.498Z] [worker-~diagnostic~-b0955a43-cffc-4766-9e80-81eee9ce078a]: BUSY
+[debug] [2020-01-12T21:18:09.802Z] [runtime-status] [30834] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T21:18:09.806Z] [runtime-status] [30834] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T21:18:09.809Z] [runtime-status] [30834] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T21:18:09.810Z] [runtime-status] [30834] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T21:18:09.811Z] [runtime-status] [30834] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T21:18:09.950Z] [worker-~diagnostic~-b0955a43-cffc-4766-9e80-81eee9ce078a]: exited
+[debug] [2020-01-12T21:18:09.950Z] [worker-~diagnostic~-b0955a43-cffc-4766-9e80-81eee9ce078a]: FINISHED
+[debug] [2020-01-12T22:00:08.309Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:00:08.370Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:00:08.840Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T22:00:08.841Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T22:00:09.847Z] [worker-~diagnostic~-d1d6d43e-3ce8-49ab-8cba-1e3581e38974]: Assigning socketPath: /tmp/fire_emu_9299.sock
+[debug] [2020-01-12T22:00:09.847Z] [worker-~diagnostic~-d1d6d43e-3ce8-49ab-8cba-1e3581e38974]: BUSY
+[debug] [2020-01-12T22:00:10.149Z] [runtime-status] [9299] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T22:00:10.152Z] [runtime-status] [9299] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T22:00:10.155Z] [runtime-status] [9299] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T22:00:10.156Z] [runtime-status] [9299] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:00:10.157Z] [runtime-status] [9299] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:00:10.319Z] [worker-~diagnostic~-d1d6d43e-3ce8-49ab-8cba-1e3581e38974]: exited
+[debug] [2020-01-12T22:00:10.320Z] [worker-~diagnostic~-d1d6d43e-3ce8-49ab-8cba-1e3581e38974]: FINISHED
+[debug] [2020-01-12T22:09:17.626Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:09:17.695Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:09:18.053Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T22:09:18.054Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T22:09:19.064Z] [worker-~diagnostic~-c1d791f1-b6f4-4236-8923-f61c5a620cf3]: Assigning socketPath: /tmp/fire_emu_11076.sock
+[debug] [2020-01-12T22:09:19.064Z] [worker-~diagnostic~-c1d791f1-b6f4-4236-8923-f61c5a620cf3]: BUSY
+[debug] [2020-01-12T22:09:19.422Z] [runtime-status] [11076] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T22:09:19.425Z] [runtime-status] [11076] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T22:09:19.428Z] [runtime-status] [11076] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T22:09:19.429Z] [runtime-status] [11076] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:09:19.430Z] [runtime-status] [11076] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:09:19.578Z] [worker-~diagnostic~-c1d791f1-b6f4-4236-8923-f61c5a620cf3]: exited
+[debug] [2020-01-12T22:09:19.578Z] [worker-~diagnostic~-c1d791f1-b6f4-4236-8923-f61c5a620cf3]: FINISHED
+[debug] [2020-01-12T22:10:53.486Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:10:53.536Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:10:53.942Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T22:10:53.942Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T22:10:54.950Z] [worker-~diagnostic~-dc5ef336-87ef-4e1c-861f-e087c44dd0e7]: Assigning socketPath: /tmp/fire_emu_11360.sock
+[debug] [2020-01-12T22:10:54.950Z] [worker-~diagnostic~-dc5ef336-87ef-4e1c-861f-e087c44dd0e7]: BUSY
+[debug] [2020-01-12T22:10:55.248Z] [runtime-status] [11360] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T22:10:55.250Z] [runtime-status] [11360] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T22:10:55.254Z] [runtime-status] [11360] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T22:10:55.256Z] [runtime-status] [11360] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:10:55.257Z] [runtime-status] [11360] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:10:55.397Z] [worker-~diagnostic~-dc5ef336-87ef-4e1c-861f-e087c44dd0e7]: exited
+[debug] [2020-01-12T22:10:55.397Z] [worker-~diagnostic~-dc5ef336-87ef-4e1c-861f-e087c44dd0e7]: FINISHED
+[debug] [2020-01-12T22:13:52.358Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:13:52.453Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:13:52.682Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T22:13:52.683Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T22:13:53.692Z] [worker-~diagnostic~-e100f006-8451-4704-ab47-076ae6accbd2]: Assigning socketPath: /tmp/fire_emu_12012.sock
+[debug] [2020-01-12T22:13:53.692Z] [worker-~diagnostic~-e100f006-8451-4704-ab47-076ae6accbd2]: BUSY
+[debug] [2020-01-12T22:13:53.996Z] [runtime-status] [12012] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T22:13:53.998Z] [runtime-status] [12012] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T22:13:54.002Z] [runtime-status] [12012] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T22:13:54.003Z] [runtime-status] [12012] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:13:54.004Z] [runtime-status] [12012] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:13:54.142Z] [worker-~diagnostic~-e100f006-8451-4704-ab47-076ae6accbd2]: exited
+[debug] [2020-01-12T22:13:54.142Z] [worker-~diagnostic~-e100f006-8451-4704-ab47-076ae6accbd2]: FINISHED
+[debug] [2020-01-12T22:14:21.311Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:14:21.718Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T22:14:21.719Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T22:14:22.727Z] [worker-~diagnostic~-36b6497c-5576-46b9-8af9-9cc42e2161d0]: Assigning socketPath: /tmp/fire_emu_12105.sock
+[debug] [2020-01-12T22:14:22.727Z] [worker-~diagnostic~-36b6497c-5576-46b9-8af9-9cc42e2161d0]: BUSY
+[debug] [2020-01-12T22:14:23.209Z] [runtime-status] [12105] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T22:14:23.212Z] [runtime-status] [12105] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T22:14:23.218Z] [runtime-status] [12105] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T22:14:23.220Z] [runtime-status] [12105] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:14:23.221Z] [runtime-status] [12105] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:14:23.362Z] [worker-~diagnostic~-36b6497c-5576-46b9-8af9-9cc42e2161d0]: exited
+[debug] [2020-01-12T22:14:23.362Z] [worker-~diagnostic~-36b6497c-5576-46b9-8af9-9cc42e2161d0]: FINISHED
+[debug] [2020-01-12T22:15:32.496Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:15:32.559Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:15:32.953Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T22:15:32.959Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T22:15:33.975Z] [worker-~diagnostic~-38d3d700-9ded-4472-9b45-78bc679390f9]: Assigning socketPath: /tmp/fire_emu_12372.sock
+[debug] [2020-01-12T22:15:33.975Z] [worker-~diagnostic~-38d3d700-9ded-4472-9b45-78bc679390f9]: BUSY
+[debug] [2020-01-12T22:15:34.294Z] [runtime-status] [12372] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T22:15:34.296Z] [runtime-status] [12372] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T22:15:34.300Z] [runtime-status] [12372] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T22:15:34.301Z] [runtime-status] [12372] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:15:34.302Z] [runtime-status] [12372] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:15:34.465Z] [worker-~diagnostic~-38d3d700-9ded-4472-9b45-78bc679390f9]: exited
+[debug] [2020-01-12T22:15:34.465Z] [worker-~diagnostic~-38d3d700-9ded-4472-9b45-78bc679390f9]: FINISHED
+[debug] [2020-01-12T22:20:39.915Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:20:39.994Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/Firestore.ts changed, reloading triggers
+[debug] [2020-01-12T22:20:40.301Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js.map changed, reloading triggers
+[debug] [2020-01-12T22:20:40.301Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/outDir/classes/Firestore.js changed, reloading triggers
+[debug] [2020-01-12T22:20:41.310Z] [worker-~diagnostic~-2bf43949-be9c-4385-b1ae-58ef6c06aa59]: Assigning socketPath: /tmp/fire_emu_13630.sock
+[debug] [2020-01-12T22:20:41.310Z] [worker-~diagnostic~-2bf43949-be9c-4385-b1ae-58ef6c06aa59]: BUSY
+[debug] [2020-01-12T22:20:41.820Z] [runtime-status] [13630] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-12T22:20:41.822Z] [runtime-status] [13630] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-12T22:20:41.826Z] [runtime-status] [13630] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-12T22:20:41.827Z] [runtime-status] [13630] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:20:41.828Z] [runtime-status] [13630] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-12T22:20:41.983Z] [worker-~diagnostic~-2bf43949-be9c-4385-b1ae-58ef6c06aa59]: exited
+[debug] [2020-01-12T22:20:41.983Z] [worker-~diagnostic~-2bf43949-be9c-4385-b1ae-58ef6c06aa59]: FINISHED

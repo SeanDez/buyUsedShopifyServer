@@ -29,7 +29,12 @@
     "yenv": "^2.1.1"
   },
   "devDependencies": {
+    "@firebase/firestore-types": "^1.9.0",
+    "@types/firebase": "^3.2.1",
     "@types/jest": "^24.0.23",
+    "@types/koa": "^2.11.0",
+    "@types/koa-session": "^5.10.1",
+    "@types/koa-static": "^4.0.1",
     "@types/node": "^13.1.0",
     "fetch-mock": "^8.0.1",
     "jest": "^24.9.0",
