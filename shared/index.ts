@@ -11,11 +11,26 @@ export interface DocumentTarget {
   , document : string
 }
 
-export enum RuleTypes {
-  global = "globalRule",
-  inventory = "inventoryCutoffRule",
-  product = "productFixedPriceRules",
-  blacklist = "blackListRules"
+
+export enum PayoutTypes {
+  paypal = "Paypal"
+  , check = "Check By Mail"
+  , alipay = "Alipay"
+  , google = 'Google Wallet'
+}
+
+export enum BuybackStatus {
+  awaitingReceipt
+  , issue
+  , closed
+}
+
+export enum RecordTypes {
+  globalRule
+  , inventoryCutoffRule
+  , productFixedPriceRule
+  , blackListRule
+  , buybackRecord
 }
 
 
@@ -45,3 +60,36 @@ export type BlacklistedProductSchema = {
   , productHandle: string
 }
 
+
+////// Buyback //////
+
+type CustomerDetails = {
+  firstName: string
+  , lastName: string
+}
+
+type PayoutDetails = {
+  method: PayoutTypes
+  , account?: string
+  , address?: string
+  , city?: string
+  , stateProvince?: string
+  , postCode?: string
+  , country?: string
+}
+
+type ProductDetails = {
+  handle: string
+  , name: string
+  , price: number
+  , quantity: number
+}
+
+export type BuybackRecord = {
+  buybackId: string
+  , status: BuybackStatus
+  , customer: CustomerDetails
+  , payout: PayoutDetails
+  , productList: ProductDetails[]
+  , notes?: string
+}

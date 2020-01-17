@@ -1,5 +1,5 @@
 import {firestore} from "firebase";
-import {DocumentTarget, RuleTypes, WhereDefinition, GlobalRuleSchema, InventoryOverrideRuleSchema, ProductSpecificRuleSchema, BlacklistedProductSchema} from "../../../shared";
+import {DocumentTarget, RecordTypes, WhereDefinition, GlobalRuleSchema, InventoryOverrideRuleSchema, ProductSpecificRuleSchema, BlacklistedProductSchema, BuybackRecord} from "../../../shared";
 
 
 const admin = require('firebase-admin');
@@ -22,21 +22,26 @@ export default class Firestore {
     
   }
   
-  verifySchemaIsCorrect(type: RuleTypes, recordData: any) {
+  /** Matches the stated type against recordData shape
+   */
+  verifySchemaIsCorrect(type: RecordTypes, recordData: any) {
     let schemaMatches: boolean;
     
     switch (type) {
-      case RuleTypes.global:
+      case RecordTypes.globalRule:
         schemaMatches = "globalPercent" in recordData;
         break;
-      case RuleTypes.inventory:
+      case RecordTypes.inventoryCutoffRule:
         schemaMatches = "inventoryPercent" in recordData;
         break;
-      case RuleTypes.product:
+      case RecordTypes.productFixedPriceRule:
         schemaMatches = "buyBackPrice" in recordData;
         break;
-      case RuleTypes.blacklist:
+      case RecordTypes.blackListRule:
         schemaMatches = "productHandle" in recordData;
+        break;
+      case RecordTypes.buybackRecord:
+        schemaMatches = "productList" in recordData;
         break;
       default:
         schemaMatches = false;
@@ -49,17 +54,23 @@ export default class Firestore {
     throw Error("recordData's shape is wrong against its schema");
   }
   
-  getCollectionName(ruleType: RuleTypes) {
-    switch (ruleType) {
-      case RuleTypes.global:
+  getCollectionName(recordTypes: RecordTypes): string {
+    switch (recordTypes) {
+      case RecordTypes.globalRule:
         return  "globalRule";
-      case RuleTypes.inventory:
+      case RecordTypes.inventoryCutoffRule:
         return "inventoryCutoffRule";
-      case RuleTypes.product:
+      case RecordTypes.productFixedPriceRule:
         return  "productFixedPriceRules";
-      case RuleTypes.blacklist:
+      case RecordTypes.blackListRule:
         return "blackListRules";
+      case RecordTypes.buybackRecord:
+        return "buyBackRecords";
+      default:
+        break;
     }
+  
+    throw Error("something went wrong inside getCollectionName()");
   }
   
   async addDocument(collectionName: string, documentData: object): Promise<any|void> {
@@ -77,7 +88,7 @@ export default class Firestore {
   
   // --------------- Public Methods
   
-  public async saveRule(type: RuleTypes, documentData: object) {
+  public async createNew(type: RecordTypes, documentData: object) {
     this.verifySchemaIsCorrect(type, documentData);
     const collectionName = this.getCollectionName(type);
     
@@ -86,7 +97,7 @@ export default class Firestore {
   
   
   // firestore.WhereFilterOp
-  public async getSome(collection: string, whereClauses: WhereDefinition[]): Promise<object|void> {
+  public async readSome(collection: string, whereClauses: WhereDefinition[]): Promise<object|void> {
     const baseQuery: any = db
       .collection(collection)
       .where("storeId", "==", this.shopDomain);
@@ -152,7 +163,7 @@ export default class Firestore {
    */
   public async update(target: DocumentTarget, updateFieldsValues: object): Promise<boolean> {
     try {
-      const response: Response = await db
+      await db
         .collection(target.collection)
         .doc(target.document)
         .update(updateFieldsValues);
@@ -168,7 +179,7 @@ export default class Firestore {
   }
   
   
-  public async deleteRecord(target: DocumentTarget): Promise<boolean> {
+  public async delete(target: DocumentTarget): Promise<boolean> {
     try {
       const write: Promise<boolean> = await db
         .collection(target.collection)
