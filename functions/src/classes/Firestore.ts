@@ -96,20 +96,24 @@ export default class Firestore {
   }
   
   
-  // firestore.WhereFilterOp
-  public async readSome(collection: string, whereClauses: WhereDefinition[]): Promise<object|void> {
+  public async getSome(collection: string, whereClauses: WhereDefinition[], limit: number, orderBy: string, offset: number): Promise<object|void> {
     const baseQuery: any = db
       .collection(collection)
       .where("storeId", "==", this.shopDomain);
   
     // arg 1 is a callback with the aggregator, then the current value from the array
-    const stitchedQuery = whereClauses
+    const addedWheres = whereClauses
       .reduce((accumulatedQuery, {column, operator, value}) => {
         return accumulatedQuery.where(column, operator, value);
       }, baseQuery);
     
+    const addedLimitOrderOffset = addedWheres
+      .orderBy(orderBy)
+      .limit(limit)
+      .offset(offset);
+    
     try {
-      const response = await stitchedQuery.get();
+      const response = await addedLimitOrderOffset.get();
       const records = response.docs.map((documentSnapshot: any) => documentSnapshot.data());
       return records;
     }
@@ -120,10 +124,6 @@ export default class Firestore {
   
   
   public async getAllRules(): Promise<object> {
-    const globalRules: any = [];
-    const exceptions: any = [];
-    const fixedProductPrices: any = [];
-    
     // todo convert all this to promise syntax. Don't want to block at each step
     
     // define each promise
@@ -131,6 +131,9 @@ export default class Firestore {
     // setup the promise.all to receive inputs, then return/resolve the object with all outputs
     Promise
       .all([1, 2, 3])
+      
+      // executes only after all promises are resolved
+      // values return inside an array, IN SAME ORDER AS PASSED IN
       .then((combinedData: any) => {
         return {
           globalRules : combinedData[0]

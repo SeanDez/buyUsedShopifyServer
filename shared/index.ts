@@ -61,35 +61,29 @@ export type BlacklistedProductSchema = {
 }
 
 
-////// Buyback //////
-
-type CustomerDetails = {
-  firstName: string
-  , lastName: string
-}
-
-type PayoutDetails = {
-  method: PayoutTypes
-  , account?: string
-  , address?: string
-  , city?: string
-  , stateProvince?: string
-  , postCode?: string
-  , country?: string
-}
-
-type ProductDetails = {
-  handle: string
-  , name: string
-  , price: number
-  , quantity: number
-}
-
+/** id is not given on creation, only retrieval
+ */
 export type BuybackRecord = {
-  buybackId: string
+  storeId: string
   , status: BuybackStatus
-  , customer: CustomerDetails
-  , payout: PayoutDetails
-  , productList: ProductDetails[]
+  , customer: {
+    firstName: string
+    , lastName: string
+  }
+  , payout: {
+      method: PayoutTypes
+    , account?: string
+    , address?: string
+    , city?: string
+    , stateProvince?: string
+    , postCode?: string
+    , country?: string
+  }
+  , productList: {
+      handle: string
+    , name: string
+    , price: number
+    , quantity: number
+  }[]
   , notes?: string
 }
