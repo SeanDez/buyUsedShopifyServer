@@ -4,10 +4,11 @@ import {DocumentTarget, RecordTypes, WhereDefinition, GlobalRuleSchema, Inventor
 
 export default class Firestore {
   protected shopDomain: string;
+  protected database: any;
   
-  constructor(shopDomain: string, database) {
+  constructor(shopDomain: string, database: any) {
     this.shopDomain = shopDomain;
-    
+    this.database = database;
   }
   
   /** Matches the stated type against recordData shape
@@ -63,7 +64,7 @@ export default class Firestore {
   
   async addDocument(collectionName: string, documentData: object): Promise<any|void> {
     try {
-      const newlyAddedDocument = await db
+      const newlyAddedDocument = await this.database
         .collection(collectionName)
         .add(documentData);
     
@@ -85,7 +86,7 @@ export default class Firestore {
   
   
   public async getSome(collection: string, whereClauses: WhereDefinition[], limit: number, orderBy: string, offset: number): Promise<object|void> {
-    const baseQuery: any = db
+    const baseQuery: any = this.database
       .collection(collection)
       .where("storeId", "==", this.shopDomain);
   
@@ -116,7 +117,7 @@ export default class Firestore {
    */
   public async update(target: DocumentTarget, updateFieldsValues: object): Promise<boolean> {
     try {
-      await db
+      await this.database
         .collection(target.collection)
         .doc(target.document)
         .update(updateFieldsValues);
@@ -134,7 +135,7 @@ export default class Firestore {
   
   public async delete(target: DocumentTarget): Promise<boolean> {
     try {
-      const write: Promise<boolean> = await db
+      const write: Promise<boolean> = await this.database
         .collection(target.collection)
         .doc(target.document)
         .delete();
