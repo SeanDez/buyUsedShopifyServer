@@ -2,22 +2,10 @@ import {firestore} from "firebase";
 import {DocumentTarget, RecordTypes, WhereDefinition, GlobalRuleSchema, InventoryOverrideRuleSchema, ProductSpecificRuleSchema, BlacklistedProductSchema, BuybackRecord} from "../../../shared";
 
 
-const admin = require('firebase-admin');
-const functions = require('firebase-functions');
-
-
-
-// uses firebase functions to initialize
-// GCP is the option used in index.ts
-admin.initializeApp(functions.config().firebase);
-let db = admin.firestore();
-
-
-
 export default class Firestore {
   protected shopDomain: string;
   
-  constructor(shopDomain: string) {
+  constructor(shopDomain: string, database) {
     this.shopDomain = shopDomain;
     
   }
@@ -113,50 +101,12 @@ export default class Firestore {
       .offset(offset);
     
     try {
-      const response = await addedLimitOrderOffset.get();
-      const records = response.docs.map((documentSnapshot: any) => documentSnapshot.data());
+      const snapshot = await addedLimitOrderOffset.get();
+      const records = snapshot.docs.map((documentSnapshot: any) => documentSnapshot.data());
       return records;
     }
     catch (e) {
       console.log(e, `=====e=====`);
-    }
-  }
-  
-  
-  public async getAllRules(): Promise<object> {
-    // todo convert all this to promise syntax. Don't want to block at each step
-    
-    // define each promise
-    
-    // setup the promise.all to receive inputs, then return/resolve the object with all outputs
-    Promise
-      .all([1, 2, 3])
-      
-      // executes only after all promises are resolved
-      // values return inside an array, IN SAME ORDER AS PASSED IN
-      .then((combinedData: any) => {
-        return {
-          globalRules : combinedData[0]
-          , exceptions : combinedData[1]
-          , fixedProductPrices : combinedData[2]
-        }
-      });
-    
-    try {
-      const response: firestore.QuerySnapshot = await db
-        .collection("globalRules")
-        .get();
-      
-      // .docs is needed to access it as an array
-      const globalRules = response.docs.map((record: any) => record.data());
-      
-    }
-    catch (e) {
-      console.log(e, `=====error=====`);
-    }
-    
-    return {
-      globalRules, exceptions, fixedProductPrices
     }
   }
   
