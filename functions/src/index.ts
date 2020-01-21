@@ -1,13 +1,10 @@
 import "isomorphic-fetch";
-import util from "util";
 import Koa from "koa";
 import koaSession from "koa-session";
-import koaStatic from "koa-static";
 import {verifyRequest} from "@shopify/koa-shopify-auth";
-import firebaseAdmin from "firebase-admin";
 import keys from "./keys";
 import OAuth from "./classes/OAuth";
-import initialAuthRouter from "./routers/initialAuth";
+import shopifyGraphQLProxy, {ApiVersion} from "@shopify/koa-shopify-graphql-proxy";
 
 const Router = require("koa-router");
 const router = new Router();
@@ -45,6 +42,8 @@ koa.use((ctx: any, next: any) => {
  oAuth.createShopifyAuthRoutes();
  next();
 });
+
+koa.use(shopifyGraphQLProxy({version : ApiVersion.October19}));
 
 // any requests below the next line are verified
 // koa.use(verifyRequest({
