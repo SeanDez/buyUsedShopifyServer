@@ -3,6 +3,8 @@ import {RecordTypes, BuybackRecord, PayoutTypes, BlacklistedProductSchema, Produ
 
 import FirestoreConnection from "../FirestoreConnection";
 import {getDatabase, setDatabase} from "../../../../shared/database";
+import {requestSubscriptionUrl} from "../../graphql";
+
 
 /* * * * * * * * * * * * * * * * * * * * *
                   Setup
