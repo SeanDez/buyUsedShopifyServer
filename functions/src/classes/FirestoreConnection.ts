@@ -1,12 +1,16 @@
-import {firestore} from "firebase";
 import {DocumentTarget, RecordTypes, WhereDefinition, GlobalRuleSchema, InventoryOverrideRuleSchema, ProductSpecificRuleSchema, BlacklistedProductSchema, BuybackRecord} from "../../../shared";
 
+// this is the line that generates the gold error
+import {firestore} from "firebase-admin";
 
-export default class Firestore {
+
+
+
+export default class FirestoreConnection {
   protected shopDomain: string;
-  protected database: any;
+  protected database: firestore.Firestore;
   
-  constructor(shopDomain: string, database: any) {
+  constructor(shopDomain: string, database: firestore.Firestore) {
     this.shopDomain = shopDomain;
     this.database = database;
   }
@@ -62,7 +66,7 @@ export default class Firestore {
     throw Error("something went wrong inside getCollectionName()");
   }
   
-  async addDocument(collectionName: string, documentData: object): Promise<any|void> {
+  protected async addDocument(collectionName: string, documentData: object): Promise<firestore.DocumentSnapshot|null> {
     try {
       const newlyAddedDocument = await this.database
         .collection(collectionName)
@@ -72,20 +76,22 @@ export default class Firestore {
     }
     catch (e) {
       console.log(e, `=====error=====`);
+      return null;
     }
   }
   
   // --------------- Public Methods
   
-  public async createNew(type: RecordTypes, documentData: object) {
+  public async createNew(type: RecordTypes, documentData: object): Promise<firestore.DocumentSnapshot|null> {
     this.verifySchemaIsCorrect(type, documentData);
     const collectionName = this.getCollectionName(type);
     
+    // can be void/empty
     return await this.addDocument(collectionName, documentData);
   }
   
   
-  public async getSome(collection: string, whereClauses: WhereDefinition[], limit: number, orderBy: string, offset: number): Promise<object|void> {
+  public async getSome(collection: string, whereClauses: WhereDefinition[], limit: number, orderBy: string, offset: number): Promise<object|null> {
     const baseQuery: any = this.database
       .collection(collection)
       .where("storeId", "==", this.shopDomain);
@@ -108,6 +114,7 @@ export default class Firestore {
     }
     catch (e) {
       console.log(e, `=====e=====`);
+      return null;
     }
   }
   
@@ -133,9 +140,9 @@ export default class Firestore {
   }
   
   
-  public async delete(target: DocumentTarget): Promise<boolean> {
+  public async delete(target: DocumentTarget): Promise<boolean|null> {
     try {
-      const write: Promise<boolean> = await this.database
+      const write: firestore.WriteResult = await this.database
         .collection(target.collection)
         .doc(target.document)
         .delete();
@@ -144,7 +151,7 @@ export default class Firestore {
     }
     catch (e) {
       console.log(e, `=====error=====`);
-      return false;
+      return null;
     }
   }
 }

@@ -33,13 +33,6 @@ const {GOOGLE_APPLICATION_CREDENTIALS} = process.env;
 // for koa-session
 koa.keys = [keys.SHOPIFY_API_SECRET];
 
-firebaseAdmin.initializeApp({
- // checks env.GOOGLE_APPLICATION_CREDENTIALS. Then checks if another service is already configured
- credential: firebaseAdmin.credential.applicationDefault(),
- databaseURL: 'https://buyusedshopify.firebaseio.com'
-});
-
-
 
 ////// Middleware (on all routes) //////
 

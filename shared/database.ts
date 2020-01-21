@@ -11,11 +11,20 @@ import functions from "firebase-functions";
 
 let db: admin.firestore.Firestore;
 
+const {GOOGLE_APPLICATION_CREDENTIALS} = process.env;
+
 // if node env is NOT test set database to firebase config
 if (process.env.NODE_ENV !== "test") {
-  // uses firebase functions to initialize
-  // GCP is the option used in index.ts
-  admin.initializeApp(functions.config().firebase);
+  // tutorial's way of doing it
+  // admin.initializeApp(functions.config().firebase);
+  
+  // my way of initializing
+  admin.initializeApp({
+    // checks env.GOOGLE_APPLICATION_CREDENTIALS. Then checks if another service is already configured
+    credential: admin.credential.applicationDefault(),
+    databaseURL: 'https://buyusedshopify.firebaseio.com'
+  });
+  
   db = admin.firestore();
 }
 
