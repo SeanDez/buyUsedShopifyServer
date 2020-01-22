@@ -1,0 +1,43 @@
+
+schema {
+  mutation: PricingPlan
+}
+
+type PricingPlan {
+  appSubscribeCreate(
+    name: String!
+    returnUrl: String!
+    test: Boolean
+    lineItems: [PlanInput!]!
+  ): Unknown
+  userErrors: {
+    field: String
+    message: String
+  }
+  confirmationUrl: String
+  appSubscription: {
+    id: Number
+  }
+}
+
+input PlanInput {
+  appUsagePricingDetails: {
+    cappedAmount: {
+      amount: Number
+      currencyCode : CurrencyCode
+    }
+  }
+  appUsagePricingDetails: {
+    cappedAmount: {
+      amount: Number
+      currencyCode : CurrencyCode
+    }
+  }
+  terms: String
+}
+
+enum CurrencyCode {
+  USD
+  EUR
+  JPY
+}

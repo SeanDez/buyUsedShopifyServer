@@ -1,9 +1,9 @@
 import "isomorphic-fetch";
 
-const pricingPlanQuery = `mutation {
+const buildPricingPlanQuery = (redirectUrl: string) => `mutation {
   appSubscribeCreate(
     name : "Plan 1"
-    returnUrl : "${process.env.HOST}"
+    returnUrl : "${redirectUrl}"
     test : true
     lineItems : [
       {
@@ -52,7 +52,7 @@ export const requestSubscriptionUrl = async (ctx: any, accessToken: string, shop
       'content-type' : "application/json"
       , 'x-shopify-access-token' : accessToken
     },
-    body : JSON.stringify({query: pricingPlanQuery})
+    body : JSON.stringify({query: buildPricingPlanQuery(`https://${shopDomain}`)})
   });
   
   const responseBody = await response.json();
