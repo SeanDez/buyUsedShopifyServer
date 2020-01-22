@@ -5,6 +5,7 @@ import {verifyRequest} from "@shopify/koa-shopify-auth";
 import keys from "./keys";
 import OAuth from "./classes/OAuth";
 import shopifyGraphQLProxy, {ApiVersion} from "@shopify/koa-shopify-graphql-proxy";
+const cors = require("cors");
 
 const Router = require("koa-router");
 const router = new Router();
@@ -32,6 +33,9 @@ koa.keys = [keys.SHOPIFY_API_SECRET];
 
 
 ////// Middleware (on all routes) //////
+
+// allow cross-origin requests
+// koa.use(cors({origin : true}));
 
 koa.use(koaSession(koa));
 
