@@ -1,7 +1,36 @@
 
-schema {
-  mutation: PricingPlan
+# ------------ Minor Types
+
+enum CurrencyCode {
+  USD
+  EUR
+  JPY
 }
+
+type cappedAmount {
+  amount: Int
+  currencyCode : CurrencyCode
+}
+
+type appUsagePricingDetails {
+  cappedAmount: cappedAmount
+}
+
+input PlanInput {
+  appUsagePricingDetails: cappedAmount
+  terms: String
+}
+
+type userErrors {
+  field: String
+  message: String
+}
+
+type appSubscription {
+  id: Int
+}
+
+# ------------ Major Type and Schema definition
 
 type PricingPlan {
   appSubscribeCreate(
@@ -9,35 +38,12 @@ type PricingPlan {
     returnUrl: String!
     test: Boolean
     lineItems: [PlanInput!]!
-  ): Unknown
-  userErrors: {
-    field: String
-    message: String
-  }
+  ): String
+  userErrors: userErrors
   confirmationUrl: String
-  appSubscription: {
-    id: Number
-  }
+  appSubscription: appSubscription
 }
 
-input PlanInput {
-  appUsagePricingDetails: {
-    cappedAmount: {
-      amount: Number
-      currencyCode : CurrencyCode
-    }
-  }
-  appUsagePricingDetails: {
-    cappedAmount: {
-      amount: Number
-      currencyCode : CurrencyCode
-    }
-  }
-  terms: String
-}
-
-enum CurrencyCode {
-  USD
-  EUR
-  JPY
+schema {
+  mutation: PricingPlan
 }
