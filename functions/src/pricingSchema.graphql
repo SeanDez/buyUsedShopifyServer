@@ -1,24 +1,43 @@
 
 # ------------ Minor Types
 
+type Deprecated {
+  ping: String @deprecated(reason: "https://stackoverflow.com/questions/59868942/graphql-a-schema-must-have-a-query-operation-defined")
+}
+
 enum CurrencyCode {
   USD
   EUR
   JPY
 }
 
-type cappedAmount {
+input cappedAmount {
   amount: Int
   currencyCode : CurrencyCode
 }
 
-type appUsagePricingDetails {
+input appUsagePricingDetails {
   cappedAmount: cappedAmount
+  terms: String
 }
 
-input PlanInput {
-  appUsagePricingDetails: cappedAmount
+input Price {
+  amount: Int
+  currencyCode: CurrencyCode
+}
+
+input appRecurringPricingDetails {
+  price: Price
   terms: String
+}
+
+input Plan {
+  appRecurringPricingDetails: appRecurringPricingDetails
+  appUsagePricingDetails: appUsagePricingDetails
+}
+
+input LineItem {
+  plan: [Plan]!
 }
 
 type userErrors {
@@ -32,18 +51,23 @@ type appSubscription {
 
 # ------------ Major Type and Schema definition
 
-type PricingPlan {
-  appSubscribeCreate(
-    name: String!
-    returnUrl: String!
-    test: Boolean
-    lineItems: [PlanInput!]!
-  ): String
+type Properties {
   userErrors: userErrors
   confirmationUrl: String
   appSubscription: appSubscription
 }
 
+type PricingPlan {
+  appSubscribeCreate(
+    name: String!
+    returnUrl: String!
+    test: Boolean
+    lineItems: [LineItem]!
+  ): Properties
+  properties: Properties
+}
+
 schema {
+  query: Deprecated
   mutation: PricingPlan
 }
