@@ -15,7 +15,7 @@ import {requestSubscriptionUrl} from "../../graphql";
 const createTestDatabase = (credentials): any => {
   return firebaseTesting
     .initializeTestApp({
-      projectId: 'testProject',
+      projectId: 'testproject',
       auth: credentials
     })
     .firestore();

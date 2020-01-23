@@ -2,6 +2,7 @@ node_modules/
 .idea/
 .env
 .env.yaml
+buyusedshopify-firebase-adminsdk-serviceAccount.json
 
 # output file folders
 lib

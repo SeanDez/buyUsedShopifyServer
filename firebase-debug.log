@@ -2659,3 +2659,49 @@ INFO: operation failed: Invalid app id
 [debug] [2020-01-22T23:47:09.178Z] [runtime-status] [3022] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
 [debug] [2020-01-22T23:47:09.336Z] [worker-~diagnostic~-b763d8c5-e76e-41d3-94ab-00def0d9d014]: exited
 [debug] [2020-01-22T23:47:09.336Z] [worker-~diagnostic~-b763d8c5-e76e-41d3-94ab-00def0d9d014]: FINISHED
+[debug] [2020-01-23T00:05:13.598Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/__tests__/FirestoreConnection.test.ts changed, reloading triggers
+[debug] [2020-01-23T00:05:16.910Z] [worker-~diagnostic~-db2b75fd-91da-4ea3-8186-17d04897cdb1]: Assigning socketPath: /tmp/fire_emu_7417.sock
+[debug] [2020-01-23T00:05:16.911Z] [worker-~diagnostic~-db2b75fd-91da-4ea3-8186-17d04897cdb1]: BUSY
+[debug] [2020-01-23T00:05:59.373Z] [runtime-status] [7417] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-23T00:05:59.375Z] [runtime-status] [7417] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-23T00:05:59.534Z] [runtime-status] [7417] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-23T00:05:59.568Z] [runtime-status] [7417] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-23T00:05:59.569Z] [runtime-status] [7417] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-23T00:06:12.977Z] [worker-~diagnostic~-db2b75fd-91da-4ea3-8186-17d04897cdb1]: exited
+[debug] [2020-01-23T00:06:12.977Z] [worker-~diagnostic~-db2b75fd-91da-4ea3-8186-17d04897cdb1]: FINISHED
+[debug] [2020-01-23T00:08:52.586Z] Jan 23, 2020 7:08:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-23T00:12:35.022Z] Jan 23, 2020 7:12:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-23T00:13:19.772Z] Jan 23, 2020 7:13:18 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: Invalid app id
+
+[debug] [2020-01-23T00:15:11.263Z] Jan 23, 2020 7:15:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-23T00:17:34.082Z] Jan 23, 2020 7:17:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-23T00:17:35.273Z] Jan 23, 2020 7:17:35 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: Invalid app id
+
+[debug] [2020-01-23T00:17:55.312Z] Jan 23, 2020 7:17:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-23T00:20:12.525Z] Jan 23, 2020 7:20:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-23T00:20:12.895Z] Jan 23, 2020 7:20:12 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: Invalid app id
+
+[debug] [2020-01-23T00:20:32.465Z] Jan 23, 2020 7:20:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-23T00:22:46.311Z] Jan 23, 2020 7:22:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-23T00:22:46.422Z] Jan 23, 2020 7:22:46 AM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: Invalid app id
+
