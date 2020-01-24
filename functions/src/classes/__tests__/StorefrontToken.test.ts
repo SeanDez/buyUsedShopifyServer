@@ -1,5 +1,5 @@
 import StorefrontToken, {GetStorefrontAccessTokens, Scope, StorefrontTokenObject} from "../StorefrontToken";
-import fetchMock from "fetch-mock";
+import fetchMock, {MockOptionsMethodGet, MockOptionsMethodPost} from "fetch-mock";
 
 
 /* * * * * * * * * * * * * * * * * * * * *
@@ -11,13 +11,13 @@ beforeEach(() => {
 });
 
 class StorefrontTokenTester extends StorefrontToken {
-  public fetchGetOptions: {headers: object} = {
+  public fetchGetOptions: MockOptionsMethodGet = {
     headers : {
       'content-type' : 'application/json'
       , 'X-Shopify-Access-Token' : this.generalToken
     }
   };
-  public fetchPostOptions = {
+  public fetchPostOptions: MockOptionsMethodPost = {
     headers : {
       'content-type' : 'application/json'
       , 'X-Shopify-Access-Token' : this.generalToken

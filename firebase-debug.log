@@ -3420,3 +3420,45 @@ INFO: Detected HTTP/2 connection.
 [debug] [2020-01-24T22:45:31.000Z] [worker-~diagnostic~-36fcf4ec-6c59-4bea-b0b3-9506690611d6]: IDLE --> FINISHING
 [debug] [2020-01-24T22:45:31.005Z] [worker-~diagnostic~-36fcf4ec-6c59-4bea-b0b3-9506690611d6]: exited
 [debug] [2020-01-24T22:45:31.005Z] [worker-~diagnostic~-36fcf4ec-6c59-4bea-b0b3-9506690611d6]: FINISHED
+[debug] [2020-01-24T23:41:59.966Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/__tests__/StorefrontToken.test.ts changed, reloading triggers
+[debug] [2020-01-24T23:42:00.075Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/__tests__/StorefrontToken.test.ts changed, reloading triggers
+[debug] [2020-01-24T23:42:01.076Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-24T23:42:01.076Z] [worker-~diagnostic~-6f5afef0-722c-43eb-a936-2e259b178c14]: FINISHING
+[debug] [2020-01-24T23:42:01.076Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-24T23:42:01.083Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-24T23:42:01.083Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-24T23:42:01.083Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-24T23:42:01.083Z] [worker-~diagnostic~-b8ec865c-2e99-4700-ba58-9dea5cbe7b33]: Assigning socketPath: /tmp/fire_emu_22917.sock
+[debug] [2020-01-24T23:42:01.083Z] [worker-~diagnostic~-b8ec865c-2e99-4700-ba58-9dea5cbe7b33]: BUSY
+[debug] [2020-01-24T23:42:01.085Z] [worker-~diagnostic~-6f5afef0-722c-43eb-a936-2e259b178c14]: exited
+[debug] [2020-01-24T23:42:01.085Z] [worker-~diagnostic~-6f5afef0-722c-43eb-a936-2e259b178c14]: FINISHED
+[debug] [2020-01-24T23:42:01.375Z] [runtime-status] [22917] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-24T23:42:01.378Z] [runtime-status] [22917] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-24T23:42:01.381Z] [runtime-status] [22917] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-24T23:42:01.382Z] [runtime-status] [22917] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-24T23:42:01.383Z] [runtime-status] [22917] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-24T23:42:01.517Z] [worker-~diagnostic~-b8ec865c-2e99-4700-ba58-9dea5cbe7b33]: IDLE
+[debug] [2020-01-24T23:42:57.147Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/__tests__/StorefrontToken.test.ts changed, reloading triggers
+[debug] [2020-01-24T23:42:57.236Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/__tests__/StorefrontToken.test.ts changed, reloading triggers
+[debug] [2020-01-24T23:42:58.237Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-24T23:42:58.237Z] [worker-~diagnostic~-b8ec865c-2e99-4700-ba58-9dea5cbe7b33]: FINISHING
+[debug] [2020-01-24T23:42:58.237Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-24T23:42:58.244Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-24T23:42:58.245Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-24T23:42:58.245Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-24T23:42:58.245Z] [worker-~diagnostic~-8ad38147-e5f2-4071-add1-bb5093154306]: Assigning socketPath: /tmp/fire_emu_23166.sock
+[debug] [2020-01-24T23:42:58.245Z] [worker-~diagnostic~-8ad38147-e5f2-4071-add1-bb5093154306]: BUSY
+[debug] [2020-01-24T23:42:58.246Z] [worker-~diagnostic~-b8ec865c-2e99-4700-ba58-9dea5cbe7b33]: exited
+[debug] [2020-01-24T23:42:58.246Z] [worker-~diagnostic~-b8ec865c-2e99-4700-ba58-9dea5cbe7b33]: FINISHED
+[debug] [2020-01-24T23:42:58.550Z] [runtime-status] [23166] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-24T23:42:58.553Z] [runtime-status] [23166] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-24T23:42:58.556Z] [runtime-status] [23166] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-24T23:42:58.557Z] [runtime-status] [23166] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-24T23:42:58.558Z] [runtime-status] [23166] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-24T23:42:58.679Z] [worker-~diagnostic~-8ad38147-e5f2-4071-add1-bb5093154306]: IDLE
+[debug] [2020-01-24T23:43:35.053Z] Jan 25, 2020 6:43:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-24T23:43:35.107Z] Jan 25, 2020 6:43:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
