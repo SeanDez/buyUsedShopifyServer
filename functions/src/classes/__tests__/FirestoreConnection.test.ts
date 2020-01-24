@@ -64,22 +64,18 @@ afterEach(async () => {
 
 test("creates new record", async () => {
   try {
-    const addedDocument = await db
+    const added: boolean = await db
       .createNew(RecordTypes.globalRule, {
         storeId : "dummystoreid"
         , globalPercent : 40
       });
     
-    expect(addedDocument).toEqual({
-      storeId : "dummystoreid"
-      , globalPercent : 40
-      , badProp : 0
-    });
+    expect(added).toBeTruthy();
   }
   catch (e) {
     console.log(e, `=====error test("creates new record"=====`);
   }
-}, 100000);
+}, 30000);
 
 test.skip('', () => null);
 
