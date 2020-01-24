@@ -11,7 +11,7 @@ beforeEach(() => {
 });
 
 class StorefrontTokenTester extends StorefrontToken {
-  public fetchGetOptions = {
+  public fetchGetOptions: {headers: object} = {
     headers : {
       'content-type' : 'application/json'
       , 'X-Shopify-Access-Token' : this.generalToken

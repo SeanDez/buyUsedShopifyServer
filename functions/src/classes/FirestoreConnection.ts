@@ -66,28 +66,34 @@ export default class FirestoreConnection {
     throw Error("something went wrong inside getCollectionName()");
   }
   
-  protected async addDocument(collectionName: string, documentData: object): Promise<firestore.DocumentSnapshot|null> {
+  protected async addDocument(collectionName: string, documentData: object): Promise<string|null> {
     try {
       const newlyAddedDocument = await this.database
         .collection(collectionName)
         .add(documentData);
     
-      return await newlyAddedDocument.get();
+      return newlyAddedDocument.id;
     }
     catch (e) {
-      console.log(e, `=====error=====`);
+      console.log(e, `=====error addDocument()=====`);
       return null;
     }
   }
   
   // --------------- Public Methods
   
-  public async createNew(type: RecordTypes, documentData: object): Promise<firestore.DocumentSnapshot|null> {
+  public async createNew(type: RecordTypes, documentData: object): Promise<string|null> {
     this.verifySchemaIsCorrect(type, documentData);
     const collectionName = this.getCollectionName(type);
     
     // can be void/empty
-    return await this.addDocument(collectionName, documentData);
+    try {
+      return await this.addDocument(collectionName, documentData);
+    }
+    catch (e) {
+      console.log(e, `=====error createNew()=====`);
+      return null;
+    }
   }
   
   
