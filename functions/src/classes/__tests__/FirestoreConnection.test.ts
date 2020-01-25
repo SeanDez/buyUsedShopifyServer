@@ -77,7 +77,7 @@ test("creates new record", async () => {
   }
 }, 30000);
 
-test.skip('', () => null);
+test('', () => null);
 
 
 

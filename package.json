@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "integrationTest": "",
-    "test": "jest --watch --testNamePattern='^(?!\\[functional\\]).+$'",
+    "test:unit": "jest --watch --testIgnorePattern='\\[functional\\]'",
     "test:functional": "jest --watch --testNamePattern='\\[functional\\]'",
     "start": "functions-framework --target=helloWorld",
     "emulate:functions": "firebase emulators:start --only functions"

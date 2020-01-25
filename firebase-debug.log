@@ -3462,3 +3462,51 @@ INFO: Detected HTTP/2 connection.
 [debug] [2020-01-24T23:43:35.107Z] Jan 25, 2020 6:43:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected HTTP/2 connection.
 
+[debug] [2020-01-25T08:48:47.985Z] Jan 25, 2020 3:48:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T08:48:48.221Z] Jan 25, 2020 3:48:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T09:03:26.109Z] Jan 25, 2020 4:03:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T09:03:26.157Z] Jan 25, 2020 4:03:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T18:06:11.535Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/__tests__/FirestoreConnection.test.ts changed, reloading triggers
+[debug] [2020-01-25T18:06:11.670Z] File /home/owner/PhpstormProjects/shopify/buyUsedServer/functions/src/classes/__tests__/FirestoreConnection.test.ts changed, reloading triggers
+[debug] [2020-01-25T18:06:12.670Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-01-25T18:06:12.670Z] [worker-~diagnostic~-8ad38147-e5f2-4071-add1-bb5093154306]: FINISHING
+[debug] [2020-01-25T18:06:12.670Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-01-25T18:06:12.678Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-25T18:06:12.678Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-01-25T18:06:12.678Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-25T18:06:12.678Z] [worker-~diagnostic~-0bca1147-f041-48e2-9fc5-0180663e1274]: Assigning socketPath: /tmp/fire_emu_17451.sock
+[debug] [2020-01-25T18:06:12.678Z] [worker-~diagnostic~-0bca1147-f041-48e2-9fc5-0180663e1274]: BUSY
+[debug] [2020-01-25T18:06:12.679Z] [worker-~diagnostic~-8ad38147-e5f2-4071-add1-bb5093154306]: exited
+[debug] [2020-01-25T18:06:12.679Z] [worker-~diagnostic~-8ad38147-e5f2-4071-add1-bb5093154306]: FINISHED
+[debug] [2020-01-25T18:06:17.561Z] [runtime-status] [17451] Functions runtime initialized. {"cwd":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions","node_version":"12.4.0"}
+[debug] [2020-01-25T18:06:17.563Z] [runtime-status] [17451] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-01-25T18:06:17.645Z] [runtime-status] [17451] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-01-25T18:06:17.675Z] [runtime-status] [17451] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-25T18:06:17.676Z] [runtime-status] [17451] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/owner/PhpstormProjects/shopify/buyUsedServer/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-01-25T18:06:19.713Z] [worker-~diagnostic~-0bca1147-f041-48e2-9fc5-0180663e1274]: IDLE
+[debug] [2020-01-25T18:07:04.157Z] Jan 26, 2020 1:07:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T18:07:04.425Z] Jan 26, 2020 1:07:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T18:07:32.548Z] Jan 26, 2020 1:07:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T18:07:32.689Z] Jan 26, 2020 1:07:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T18:08:11.842Z] Jan 26, 2020 1:08:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[debug] [2020-01-25T18:08:11.890Z] Jan 26, 2020 1:08:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
